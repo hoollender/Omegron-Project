@@ -44,7 +44,7 @@ body > nav > div.links > li {
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(84, 91, 98, 0.5), rgba(84, 91, 98, 0.3)), url(/img/background-index.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(84, 91, 98, 0.5), rgba(84, 91, 98, 0.3)), url(/images/background-index.jpg);
     background-position: center;
     background-position-y: 1rem;
     background-attachment: fixed;
