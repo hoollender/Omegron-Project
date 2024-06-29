@@ -2,14 +2,16 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Omegron Application</title>
-    <link rel="stylesheet" href="/css/reset-css.css"/>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Omegron</title>
+        <link rel="stylesheet" href="/css/reset-css.css"/>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <script src="/js/jquery-3.5.1.slim.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
 <body>
 <header>
     <nav>
@@ -19,18 +21,18 @@
                 Omegron</a>
         </div>
         <div class="links">
-            <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
-                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Admin
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/">Action</a>
-                    <a class="dropdown-item" href="/">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/">Something else here</a>
-                </div>
-            </li>
+            <!--            <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">-->
+            <!--                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"-->
+            <!--                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--                    Admin-->
+            <!--                </a>-->
+            <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--                    <a class="dropdown-item" href="/">Action</a>-->
+            <!--                    <a class="dropdown-item" href="/">Another action</a>-->
+            <!--                    <div class="dropdown-divider"></div>-->
+            <!--                    <a class="dropdown-item" href="/">Something else here</a>-->
+            <!--                </div>-->
+            <!--            </li>-->
 
             <li sec:authorize="!isAuthenticated()">
                 <a th:href="@{/login}">Login</a>
@@ -47,11 +49,9 @@
     </nav>
 </header>
 <footer class="footer bg-transparent py-2">
-    <div class="container-fluid text-center">
-        <div class="footer-background footer-text fixed-bottom">
+        <div class="text-center footer-background footer-text fixed-bottom">
             &copy; Omegron 2024. All rights reserved. Developed by Kostadin Ivanov.
         </div>
-    </div>
 </footer>
 </body>
 </html>

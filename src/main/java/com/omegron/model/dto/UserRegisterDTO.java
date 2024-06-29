@@ -1,60 +1,62 @@
 package com.omegron.model.dto;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class UserRegisterDTO {
-
-    @NotNull
-    @Size(min = 3, max = 20, message = "Username length must be between 3 and 20 characters!")
-    private String username;
-
-    @NotBlank(message = "Email cannot be empty!")
+    @NotEmpty
+    @Size(min = 5, max = 20)
+    private String firstName;
+    @NotEmpty
+    @Size(min = 5, max = 20)
+    private String lastName;
+    @NotEmpty
+    private String password;
+    @NotEmpty
     @Email
     private String email;
-
-    @NotNull
-    @Size(min = 3, max = 20, message = "Password length must be between 3 and 20 characters!")
-    private String password;
-
-    @NotNull
-    @Size(min = 3, max = 20)
-    private String confirmPassword;
-
-    public UserRegisterDTO() {
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getUsername() {
-        return username;
+    public UserRegisterDTO setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public UserRegisterDTO setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserRegisterDTO setPassword(String password) {
         this.password = password;
+        return this;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
+    public String getEmail() {
+        return email;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public UserRegisterDTO setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRegistrationDTO{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + (password == null ? "N/A" : "[PROVIDED]") + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

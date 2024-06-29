@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'login'})}"></div>
+
+<div class="container">
+    <h2 class="text-center text-white">Login</h2>
+    <form th:method="post"
+          th:action="@{/users/login}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="form-group">
+            <label for="email" class="text-white font-weight-bold">Email</label>
+            <input id="email"
+                   name="email"
+                   type="text"
+                   class="form-control"
+                   placeholder="Enter your email here"/>
+        </div>
+        <div class="form-group">
+            <label for="password" class="text-white font-weight-bold">Password</label>
+            <input id="password"
+                   name="password"
+                   type="password"
+                   class="form-control"
+                   placeholder="Enter your password"/>
+        </div>
+
+        <p class="errors alert alert-danger">
+            Invalid username or password!
+        </p>
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Login"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+</body>
+</html>

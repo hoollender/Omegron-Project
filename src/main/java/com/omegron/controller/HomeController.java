@@ -15,9 +15,9 @@ public class HomeController {
                        Model model) {
 
         if (userDetails instanceof OmegronUserDetails omegronUserDetails) {
-            model.addAttribute("welcomeMessage", omegronUserDetails.getFullName());
+            model.addAttribute("welcomeMessage", ", " + omegronUserDetails.getFirstName());
         } else {
-            model.addAttribute("welcomeMessage", "Anonymous");
+            model.addAttribute("welcomeMessage", "");
         }
         return "index";
     }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'register'})}"></div>
+
+<div class="container">
+    <h2 class="text-center text-white">Registration</h2>
+    <form th:method="post"
+          th:action="@{/users/register}"
+          th:object="${registerDTO}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="firstName" class="text-white font-weight-bold">First Name</label>
+                <input th:field="*{firstName}"
+                       type="text"
+                       class="form-control"
+                       placeholder="First name"/>
+                <p class="errors alert alert-danger">
+                    First name is required!
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="lastName" class="text-white font-weight-bold">Last Name</label>
+                <input
+                        th:field="*{lastName}"
+                        type="text"
+                        class="form-control"
+                        placeholder="Last name"/>
+                <p class="errors alert alert-danger">
+                    Last name is required!
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="email" class="text-white font-weight-bold">Email</label>
+                <input
+                        th:field="*{email}"
+                        type="email"
+                        class="form-control"
+                        placeholder="Email"/>
+                <p class="errors alert alert-danger">
+                    Email is required!
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="password" class="text-white font-weight-bold">Password</label>
+                <input
+                        th:field="*{password}"
+                        type="password"
+                        class="form-control"
+                        placeholder="Password"/>
+                <p class="errors alert alert-danger">
+                    Password is required!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="button-holder d-flex">
+                    <input type="submit" class="btn btn-info btn-lg" value="Register"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>
