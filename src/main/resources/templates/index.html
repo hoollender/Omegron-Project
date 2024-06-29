@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::nav"></header>
+<main>
+    <!--    <div class="container bg-blur rounded mt-5 ">-->
+    <div class="welcome">
+        <h1>Welcome to Omegron</h1>
+        <hr class="my-3 bg-white w-50"/>
+
+        <p class="h4">
+            "Omegron" a web-based application that facilitates the work of agribusiness administration.
+            Its aim is to contain all the necessary information for reports and contracts in one easily and quickly accessible place.
+            In addition, it has the most important functions for a farmer by dynamically providing up-to-date information on weather, inventory and machinery.</p>
+        <hr class="my-3 bg-white w-75"/>
+
+        <h3>
+            <a class="primary-text" th:href="@{/login}">Login</a>
+            if you have an account or
+            <a class="primary-text" th:href="@{/register}">Register</a>
+            now and check our paintings.
+        </h3>
+
+        <p class="h4 separate">
+            The application is still under construction! Please excuse us for the inconvenience!
+            <br>
+            If you find a bug, please report it and send us an example to:
+            <br>
+            k.ivanov.dceo@gmail.com</p>
+    </div>
+</main>
+<footer th:replace="fragments/commons::footer"></footer>
+</body>
+</html>
