@@ -10,9 +10,9 @@
 
 <div class="container">
     <h2 class="text-center text-white">Registration</h2>
-    <form th:method="post"
+    <form th:method="POST"
           th:action="@{/users/register}"
-          th:object="${registerDTO}"
+          th:object="${registerData}"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
             <div class="form-group col-md-6 mb-3">
@@ -21,7 +21,9 @@
                        type="text"
                        class="form-control"
                        placeholder="First name"/>
-                <p class="errors alert alert-danger">
+                <p class="errors alert alert-danger"
+                   th:if="${#fields.hasErrors('firstName')}"
+                   th:errors="*{firstName}">
                     First name is required!
                 </p>
             </div>
@@ -32,7 +34,9 @@
                         type="text"
                         class="form-control"
                         placeholder="Last name"/>
-                <p class="errors alert alert-danger">
+                <p class="errors alert alert-danger"
+                   th:if="${#fields.hasErrors('lastName')}"
+                   th:errors="*{lastName}">
                     Last name is required!
                 </p>
             </div>
@@ -45,7 +49,9 @@
                         type="email"
                         class="form-control"
                         placeholder="Email"/>
-                <p class="errors alert alert-danger">
+                <p class="errors alert alert-danger"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">
                     Email is required!
                 </p>
             </div>
@@ -56,8 +62,23 @@
                         type="password"
                         class="form-control"
                         placeholder="Password"/>
-                <p class="errors alert alert-danger">
+                <p class="errors alert alert-danger"
+                   th:if="${#fields.hasErrors('password')}"
+                   th:errors="*{password}">
                     Password is required!
+                </p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="password" class="text-white font-weight-bold">Confirm password</label>
+                <input
+                        th:field="*{confirmPassword}"
+                        type="password"
+                        class="form-control"
+                        placeholder="Confirm password"/>
+                <p class="errors alert alert-danger"
+                   th:if="${#fields.hasErrors('confirmPassword')}"
+                   th:errors="*{confirmPassword}">
+                    Confirm password is required!
                 </p>
             </div>
         </div>
@@ -65,7 +86,7 @@
         <div class="row">
             <div class="col col-md-4">
                 <div class="button-holder d-flex">
-                    <input type="submit" class="btn btn-info btn-lg" value="Register"/>
+                    <input type="submit" class="btn btn-success btn-lg" value="Register"/>
                 </div>
             </div>
         </div>

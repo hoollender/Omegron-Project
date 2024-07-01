@@ -4,44 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added configurations, migrated basic login to Spring Security login, removed validations from templates, etc.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auth-login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/auth-register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/brands.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/offers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/update.html" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Working on the templates and trying to insure a visually appealing and intuitive front-end design for an good user experience (UX).">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegisterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserLoginDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/reset-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/reset-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background-index.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auth-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/offer-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/RegisterController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserLoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserLoginDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/reset-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/reset-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/background-index.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +71,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kivan/Desktop/Online Project Defence/Project/src/main/resources",
+    "last_opened_file_path": "C:/Users/kivan/Desktop/Exam/Popravka/PaintingsCollectors-App",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -177,7 +161,7 @@
       <workItem from="1718694869679" duration="66000" />
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
-      <workItem from="1719659291995" duration="12812000" />
+      <workItem from="1719659291995" duration="33047000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -203,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719658669633</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working on the templates and trying to insure a visually appealing and intuitive front-end design for an good user experience (UX).">
+      <option name="closed" value="true" />
+      <created>1719678623690</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719678623690</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +216,14 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added configurations, migrated basic login to Spring Security login, removed validations from templates, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added configurations, migrated basic login to Spring Security login, removed validations from templates, etc." />
+    <MESSAGE value="Working on the templates and trying to insure a visually appealing and intuitive front-end design for an good user experience (UX)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the templates and trying to insure a visually appealing and intuitive front-end design for an good user experience (UX)." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="bindingResult" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

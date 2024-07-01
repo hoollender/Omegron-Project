@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: Omegron
   jpa:
     properties:
       hibernate:
@@ -7,10 +9,13 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: 'false'
+  sql:
+    init:
+      mode: never
   mvc:
     hiddenmethod:
       filter:
-        enabled: 'true'
+        enabled: true
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root

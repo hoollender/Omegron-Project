@@ -3,17 +3,22 @@ package com.omegron.model.dto;
 import jakarta.validation.constraints.*;
 
 public class UserRegisterDTO {
-    @NotEmpty
-    @Size(min = 5, max = 20)
+    @NotBlank(message = "Username is required!")
+    @Size(min = 3, max = 20, message = "First name length must be between 3 and 20 characters!")
     private String firstName;
-    @NotEmpty
-    @Size(min = 5, max = 20)
+    @NotBlank(message = "Username is required!")
+    @Size(min = 3, max = 20, message = "Last name length must be between 3 and 20 characters!")
     private String lastName;
-    @NotEmpty
+    @NotBlank(message = "Password is required!")
+    @Size(min = 3, max = 20, message = "Password length must be between 3 and 20 characters!")
     private String password;
-    @NotEmpty
-    @Email
+    @NotBlank(message = "Confirm password is required!")
+    @Size(min = 3, max = 20, message = "Confirm password length must be between 3 and 20 characters!")
+    private String confirmPassword;
+    @NotBlank(message = "Email is required!")
+    @Email(message = "Please provide a valid email address!")
     private String email;
+
     public String getFirstName() {
         return firstName;
     }
@@ -48,6 +53,14 @@ public class UserRegisterDTO {
     public UserRegisterDTO setEmail(String email) {
         this.email = email;
         return this;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     @Override
