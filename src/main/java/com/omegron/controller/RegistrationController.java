@@ -36,17 +36,22 @@ public class RegistrationController {
     public String register(@Valid UserRegisterDTO data,
                            BindingResult bindingResult,
                            RedirectAttributes redirectAttributes) {
-        if (bindingResult.hasErrors() || userService.isEmailTaken(data.getEmail()) || !data.getPassword().equals(data.getConfirmPassword())) {
+        if (bindingResult.hasErrors() || !data.getPassword().equals(data.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("registerData", data);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.registerData", bindingResult);
             return "redirect:/users/register";
         }
 
-        boolean success = userService.registerUser(data);
+        boolean isEmailTaken = userService.isEmailTaken(data.getEmail());
 
-        if (!success) {
+        if (isEmailTaken) {
+            redirectAttributes.addFlashAttribute("emailError", "Please use another email.");
+            redirectAttributes.addFlashAttribute("registerData", data);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.registerData", bindingResult);
             return "redirect:/users/register";
         }
+
+        userService.registerUser(data);
 
         return "redirect:/login";
     }

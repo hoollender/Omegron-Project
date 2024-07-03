@@ -6,11 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class UserLoginDTO {
-    @NotBlank(message = "Please enter an email address!")
-    @Email
+    @NotBlank(message = "Email is required!")
+    @Email(message = "Please provide a valid email address!")
     private String email;
-    @NotBlank(message = "Please enter a password!")
-    @Size(min = 3, max = 20, message = "Password is invalid!")
+    @NotBlank(message = "Password is required!")
     private String password;
 
     public UserLoginDTO() {

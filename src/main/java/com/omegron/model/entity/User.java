@@ -1,6 +1,9 @@
 package com.omegron.model.entity;
 
+import com.omegron.model.enums.RoleEnum;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,24 +11,29 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
-    @Column(unique = true)
-    private String email;
 
+    @Column(nullable = false)
+    @Size(min = 3, max = 50)
+    private String firstName;
+    @Column(nullable = false)
+    @Size(min = 3, max = 50) //Karaivanova-kodjabasheva has 22 chars.
+    private String lastName;
+    @Column(unique = true, nullable = false)
+    @Email
+    private String email;
+    @Column(nullable = false)
+    @Size(min = 3, max = 100) //Password encoder creates 96 char length hashed password!
     private String password;
 
-    private String firstName;
-
-    private String lastName;
-
-    @ManyToMany(
-            fetch = FetchType.EAGER
-    )
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
+
     private List<Role> roles = new ArrayList<>();
+
 
     public String getEmail() {
         return email;
@@ -70,6 +78,10 @@ public class User extends BaseEntity {
     public User setRoles(List<Role> roles) {
         this.roles = roles;
         return this;
+    }
+
+    public void addRole(Role role) {
+        this.roles.add(role);
     }
 
     @Override
