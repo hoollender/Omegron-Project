@@ -56,6 +56,6 @@ public class TractorController {
 
         tractorService.deleteTractor(id);
 
-        return "redirect:/tractors/add";
+        return "redirect:/tractors/all";
     }
 }

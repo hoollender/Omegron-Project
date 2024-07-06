@@ -2,10 +2,13 @@ package com.omegron.service.impl;
 
 import com.omegron.model.dto.AddTractorDTO;
 import com.omegron.model.dto.TractorDetailsDTO;
+import com.omegron.model.dto.TractorSummaryDTO;
 import com.omegron.model.entity.Tractor;
 import com.omegron.repository.TractorRepository;
 import com.omegron.service.TractorService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TractorServiceImpl implements TractorService {
@@ -33,6 +36,26 @@ public class TractorServiceImpl implements TractorService {
                 .orElseThrow();
     }
 
+    @Override
+    public List<TractorSummaryDTO> getAllTractorsSummary() {
+        return tractorRepository
+                .findAll()
+                .stream()
+                .map(TractorServiceImpl::toTractorSummary)
+                .toList();
+    }
+
+    private static TractorSummaryDTO toTractorSummary(Tractor tractor) {
+        return new TractorSummaryDTO(tractor.getId(),
+                tractor.getManufacturer(),
+                tractor.getModel(),
+                tractor.getYear(),
+                tractor.getDescription(),
+                tractor.getWorkHours(),
+                tractor.getImageUrl(),
+                tractor.getEngine(),
+                tractor.getTransmission());
+    }
 
     private static TractorDetailsDTO toTractorDetails(Tractor tractor){
         return new TractorDetailsDTO(tractor.getId(),
