@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/tractors")
-public class TractorController {
+public class TractorController extends BaseController{
 
     private final TractorService tractorService;
 

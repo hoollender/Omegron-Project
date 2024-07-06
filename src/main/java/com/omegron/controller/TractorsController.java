@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/tractors")
-public class TractorsController {
+public class TractorsController extends BaseController{
     private final TractorService tractorService;
 
     public TractorsController(TractorService tractorService) {

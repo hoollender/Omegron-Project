@@ -3,14 +3,13 @@ package com.omegron.controller;
 import com.omegron.model.user.OmegronUserDetails;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class HomeController {
+import org.springframework.web.bind.annotation.ModelAttribute;
+//TODO: Fix welcome "username" on index page and all others.
+public abstract class BaseController {
 
-    @GetMapping("/")
+    @ModelAttribute("welcomeMessage")
     public String home(@AuthenticationPrincipal UserDetails userDetails,
                        Model model) {
 
@@ -20,6 +19,6 @@ public class HomeController {
             model.addAttribute("welcomeMessage", "");
         }
 
-        return "index";
+        return "";
     }
 }

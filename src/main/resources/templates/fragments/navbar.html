@@ -6,7 +6,7 @@
 <body>
 <div th:fragment="navbar(activeLink)">
 
-    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #343a40;">
         <a class="navbar-brand" href="/"><img alt="omegron logo" src="/images/logo.png" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,14 +14,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto col-12 justify-content-between">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <a class="nav-link" href="/brands/all">All Brands</a>
                 </li>
-<!--                <li class="nav-item" sec:authorize="isAuthenticated()">-->
-<!--                    <a class="nav-link " href="/tractors/add" th:classappend="${activeLink == 'add-offer'}? 'active'">Add-->
-<!--                        Tractor</a>-->
-<!--                </li>-->
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <a class="nav-link" href="/tractors/all" th:classappend="${activeLink == 'all-tractors'}? 'active'">All
                         Tractors</a>
@@ -30,31 +26,31 @@
                     <form class="form-inline my-2 my-lg-0">
                         <input class="nav-item form-control mr-sm-2" type="search" placeholder="Under construction :)"
                                aria-label="Search">
-                        <button class="nav-item btn my-2 my-sm-0" type="submit">Search</button>
+                        <button class="nav-item btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </li>
                 <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
-                    <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/tractors/add" th:classappend="${activeLink == 'add-tractor'}? 'active'">Add Tractor</a>
-                        <a class="dropdown-item" href="/">Another action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/">Something else here</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <div class="logged-user"
-                         text="Welcome, Some name here"></div>
-                    <form th:method="post"
-                          th:action="@{/users/logout}">
-                        <input class="nav-item btn" type="submit" value="Logout"/>
+            </ul>
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item d-flex align-items-center" sec:authorize="isAuthenticated()">
+                    <div class="logged-user text-light mr-1">Welcome</div>
+                    <div class="logged-user text-light" th:text="${welcomeMessage}">somebody</div>
+                    <form th:method="post" th:action="@{/users/logout}" class="ml-3 mb-0">
+                        <input class="btn btn-outline-light" type="submit" value="Logout"/>
                     </form>
                 </li>
-
-                <li class="nav-item" sec:authorize=="!isAuthenticated()">
+                <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" href="/users/login"
                        th:classappend="${activeLink == 'login'}? 'active'">Login</a>
                 </li>
