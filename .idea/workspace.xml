@@ -4,53 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Fixed the validation errors in login page.&#10;Changed .failureForwardUrl to .failureUrl(&quot;/users/login?error=true&quot;)">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BrandController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorsController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/AddTractorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/TractorDetailsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/TractorSummaryDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/EngineTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/ManufacturersEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/TransmissionTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/converters/ManufacturersEnumConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/converters/TransmissionTypeEnumConverter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/TractorRepository.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserLoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserLoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/EngineTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/EngineTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/background-index.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserLoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserLoginDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/enums/EngineTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/enums/EngineTypeEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -118,6 +100,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.omegron.model.enums" />
       <recent name="com.omegron.repository" />
       <recent name="com.omegron.model.dto" />
       <recent name="com.omegron.model.entity" />
@@ -195,7 +178,7 @@
       <workItem from="1718694869679" duration="66000" />
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
-      <workItem from="1719659291995" duration="60762000" />
+      <workItem from="1719659291995" duration="83355000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -245,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719857490691</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message.">
+      <option name="closed" value="true" />
+      <created>1720017226800</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720017226800</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +260,8 @@
     <MESSAGE value="Working on the templates and trying to insure a visually appealing and intuitive front-end design for an good user experience (UX)." />
     <MESSAGE value="Added confirm password as extra field, fixed validation messages in register. Changed the style of the templates and renamed them. Registration finally works fine." />
     <MESSAGE value="Fixed the validation errors in login page.&#10;Changed .failureForwardUrl to .failureUrl(&quot;/users/login?error=true&quot;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the validation errors in login page.&#10;Changed .failureForwardUrl to .failureUrl(&quot;/users/login?error=true&quot;)" />
+    <MESSAGE value="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +271,10 @@
           <line>38</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.thymeleaf.exceptions.TemplateProcessingException" package="org.thymeleaf.exceptions" />
+          <option name="timeStamp" value="18" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

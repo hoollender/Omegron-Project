@@ -19,6 +19,7 @@ public class HomeController {
         } else {
             model.addAttribute("welcomeMessage", "");
         }
+
         return "index";
     }
 }

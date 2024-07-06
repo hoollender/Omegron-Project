@@ -1,7 +1,3 @@
 package com.omegron.model.enums;
 
-public enum EngineTypeEnum { PETROL,
-    DIESEL,
-    ELECTRIC,
-    HYBRID
-}
+public enum EngineTypeEnum { Diesel, Petrol, Hybrid, Electric}

@@ -15,17 +15,14 @@
         <a href="?lang=de" class="btn btn-secondary">Deutsch</a>
     </div>
 
-    <h1 class="text-center text-white mt-5"><th:block th:text="#{welcomeMessage}"></th:block>!</h1>
+    <h1 class="text-center text-white mt-5"><th:block th:text="#{welcomeMessage}"></th:block><th:block th:text="${welcomeMessage}"></th:block>!</h1>
     <hr class="my-3 bg-white w-50">
 <!--    If user isn't logged in-->
-    <p class="h4" sec:authorize="!isAuthenticated()" >
-        Omegron is a web-based application that facilitates the work of agribusiness administration.
-        Its aim is to consolidate all necessary information for reports and contracts in one easily and quickly accessible place.
-        Additionally, it offers the most important functions for farmers by dynamically providing up-to-date information on weather, inventory, and machinery.</p>
+    <p class="h4" sec:authorize="!isAuthenticated()" th:text="#{not.authenticated.message}">
+       </p>
     <!--    If user is logged in-->
 
-    <p class="h4" sec:authorize="isAuthenticated()" >
-        Now you can start working. The pages above are self-explanatory and you can try them out!</p>
+    <p class="h4" sec:authorize="isAuthenticated()" th:text="#{authenticated.message}"></p>
     <hr class="my-3 bg-white w-75"/>
 
     <h3 sec:authorize="!isAuthenticated()">
