@@ -3,31 +3,31 @@ package com.omegron.model.entity;
 import com.omegron.model.enums.EngineTypeEnum;
 import com.omegron.model.enums.ManufacturersEnum;
 import com.omegron.model.enums.TransmissionTypeEnum;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tractors")
 public class Tractor extends BaseEntity{
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private ManufacturersEnum manufacturer;
-
+    @Column(nullable = false)
+    @Size(min = 2, max = 50)
     private String model;
-
+    @Column(nullable = false)
     private int year;
-
+    @Column(nullable = false)
     private String description;
-
+    @Column(nullable = false)
     private int workHours;
-
+    @Column(nullable = false)
     private String imageUrl;
-
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private EngineTypeEnum engine;
-
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TransmissionTypeEnum transmission;
 

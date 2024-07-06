@@ -4,35 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BrandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/AddTractorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/ManufacturersEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/TransmissionTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/converters/ManufacturersEnumConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/converters/TransmissionTypeEnumConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/TractorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added page for adding tractors and implemented the functionality. Validations done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/EngineTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/enums/EngineTypeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/enums/EngineTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/enums/EngineTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +153,7 @@
       <workItem from="1718694869679" duration="66000" />
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
-      <workItem from="1719659291995" duration="83355000" />
+      <workItem from="1719659291995" duration="83800000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -236,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720017226800</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added page for adding tractors and implemented the functionality. Validations done.">
+      <option name="closed" value="true" />
+      <created>1720260912686</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720260912686</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +244,8 @@
     <MESSAGE value="Added confirm password as extra field, fixed validation messages in register. Changed the style of the templates and renamed them. Registration finally works fine." />
     <MESSAGE value="Fixed the validation errors in login page.&#10;Changed .failureForwardUrl to .failureUrl(&quot;/users/login?error=true&quot;)" />
     <MESSAGE value="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message." />
+    <MESSAGE value="Added page for adding tractors and implemented the functionality. Validations done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added page for adding tractors and implemented the functionality. Validations done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

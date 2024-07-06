@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'add-offer'})}"></div>
+
+<div class="container">
+
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+        <span th:text="${successMessage}"></span>
+    </div>
+
+    <h2 class="text-center text-white">Add Tractor</h2>
+    <form
+            th:action="@{/tractors/add}"
+            th:method="POST"
+            th:object="${addTractorDTO}"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="model" class="text-center text-white font-weight-bold">Manufacturer</label>
+                <select th:field="*{manufacturer}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select a manufacturer -</option>
+                    <option th:each="manufacturer: ${allManufacturers}"
+                            th:value="${manufacturer}"
+                            th:text="${manufacturer}">
+                    </option>
+                </select>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('manufacturer')}"
+                   th:errors="*{manufacturer}">Tractor manufacturer is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-center text-white font-weight-bold" th:for="model">Model</label>
+                <textarea
+                        th:field="*{model}"
+                        th:errorclass="is-invalid"
+                        type="model"
+                        class="form-control"
+                        rows="1"
+                        placeholder="Model">
+            </textarea>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('model')}"
+                   th:errors="*{model}">Tractor model is required.</p>
+            </div>
+            <!--            <div class="form-group col-md-6 mb-3">-->
+            <!--                <label th:for="price" class="text-white font-weight-bold">Price (BGN)</label>-->
+            <!--                <input-->
+            <!--                        th:field="*{price}"-->
+            <!--                        type="number"-->
+            <!--                        th:errorclass="is-invalid"-->
+            <!--                        class="form-control"-->
+            <!--                        placeholder="Price in BGN"/>-->
+            <!--                <p class="invalid-feedback errors alert alert-danger">-->
+            <!--                    Valid mileage in kilometers is required.-->
+            <!--                </p>-->
+            <!--            </div>-->
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="year" class="text-white font-weight-bold">Year</label>
+                <input
+                        th:field="*{year}"
+                        id="year" type="number"
+                        th:errorclass="is-invalid"
+                        min="1900" max="2099" step="1" class="form-control"
+                        placeholder="Manufacturing year"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('year')}"
+                   th:errors="*{year}">Manufacturing year is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="workHours" class="text-white font-weight-bold">Work hours</label>
+                <input th:field="*{workHours}"
+                       type="number"
+                       th:errorclass="is-invalid"
+                       class="form-control"
+                       placeholder="Work hours"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('workHours')}"
+                   th:errors="*{workHours}">Work hours are required.</p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-center text-white font-weight-bold" th:for="engineType">Engine</label>
+                <select
+                        th:field="*{engineType}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select engine type -</option>
+                    <option th:each="type: ${allEngineTypes}"
+                            th:value="${type}"
+                            th:text="${type}">
+                        SOME OTHER ENGINE
+                    </option>
+                </select>
+
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('engineType')}"
+                   th:errors="*{engineType}">Engine type is required.</p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-center text-white font-weight-bold" th:for="transmission">Transmission</label>
+                <select
+                    th:field="*{transmissionType}"
+                    th:errorclass="is-invalid"
+                    class="form-control">
+                <option value="">- Select transmission type -</option>
+                <option th:each="type: ${allTransmissionTypes}"
+                        th:value="${type}"
+                        th:text="${type}">
+                    SOME OTHER TRANSMISSION
+                </option>
+            </select>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('transmissionType')}"
+                   th:errors="*{transmissionType}">Transmission type is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-white font-weight-bold" th:for="description">Description</label>
+                <textarea
+                        th:field="*{description}"
+                        th:errorclass="is-invalid"
+                        type="textarea"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Description">
+            </textarea>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('description')}"
+                   th:errors="*{description}">
+                    Description is required and should be at least 5 symbols.
+                </p>
+
+                <!--            <small th:each="err : ${#fields.errors('description')}" th:text="${err}" class="text-danger"></small>-->
+
+                <!--            Alternative error display-->
+                <!--            <small th:errors="*{description}" class="text-danger">Description error-->
+                <!--            </small>-->
+
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label class="text-white font-weight-bold" th:for="imageUrl">Image URL</label>
+                <input
+                        th:field="*{imageUrl}"
+                        th:errorclass="is-invalid"
+                        id="imageUrl" type="url" class="form-control"
+                       placeholder="Put tractor image URL here">
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('imageUrl')}"
+                   th:errors="*{imageUrl}">Tractor image URL is required.</p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <div class="col col-md-6">
+                    <div class="button-holder d-flex">
+                        <input type="submit" class="btn btn-success btn-lg" value="Add Tractor"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>
