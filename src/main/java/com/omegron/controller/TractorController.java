@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
+@RequestMapping("/tractors")
 public class TractorController {
 
     private final TractorService tractorService;
@@ -23,7 +25,7 @@ public class TractorController {
     }
 
 
-    @GetMapping("/tractors/add")
+    @GetMapping("/add")
     public String addTractor(Model model) {
         if(!model.containsAttribute("addTractorDTO")) {
         model.addAttribute("addTractorDTO", AddTractorDTO.empty());
@@ -35,7 +37,7 @@ public class TractorController {
         return "tractor-add";
     }
 
-    @PostMapping("/tractors/add")
+    @PostMapping("/add")
     public String doAddTractor (@Valid AddTractorDTO addTractorDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes){
 
         if (bindingResult.hasErrors()) {
@@ -43,10 +45,10 @@ public class TractorController {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addTractorDTO", bindingResult);
             return "redirect:/tractors/add";
         }
-
-        tractorService.addTractor(addTractorDTO);
+        long newTractorId = tractorService.addTractor(addTractorDTO);
 
         redirectAttributes.addFlashAttribute("successMessage", "Tractor added successfully!");
+        redirectAttributes.addFlashAttribute("newTractorId", newTractorId);
 
         return "redirect:/tractors/add";
     }

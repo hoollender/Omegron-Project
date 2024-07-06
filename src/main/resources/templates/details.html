@@ -13,18 +13,23 @@
     <div
             th:object="${tractorDetails}"
             class="offers row mx-auto d-flex flex-row justify-content-center">
-        <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">
+        <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0 bg-secondary text-white">
 
             <div class="card-body pb-1">
-                <h5 class="card-title">
-                    Offer year Brand name Model name</h5>
+                <h5 class="card-title">Details of your machine:</h5>
             </div>
-            <ul class="offer-details list-group list-group-flush">
-                <li class="list-group-item">
-                    <div class="card-text">• Work hours <span th:text="*{workHours}">Work hours</span></div>
+            <ul class="offer-details list-group list-group-flush text-white">
+                <li class="list-group-item bg-success">
+                    <div class="card-text text-left">• Manufacturer: <span th:text="*{manufacturer}">Manufacturer</span></div>
+                    <div class="card-text text-left">• Model: <span th:text="*{model}">Model</span></div>
+                    <div class="card-text text-left">• Year: <span th:text="*{year}">Year</span></div>
+                    <div class="card-text text-left">• Description: <span th:text="*{description}">Description</span></div>
+                    <div class="card-text text-left">• Work hours: <span th:text="*{workHours}">Work hours</span></div>
+<!--                    <div class="card-text text-left">• Image URL: <span th:text="*{imageUrl}">Image URL</span></div>-->
+                    <div class="card-text text-left">• Engine type: <span th:text="*{engineType}">Engine type</span></div>
+                    <div class="card-text text-left">• Transmission type: <span th:text="*{transmissionType}">Transmission type</span></div>
+
 <!--                    <div class="card-text">• Price <span id="price" th:text="*{price}">Price</span></div>-->
-                    <div class="card-text">• Engine type <span th:text="*{engineType}">Engine type</span></div>
-                    <div class="card-text"><span>• Transmission type</span></div>
 <!--                    <div class="card-text">• Currency-->
 <!--                            <select id="currency">-->
 <!--                                <option-->
@@ -50,7 +55,7 @@
             </div>
         </div>
         <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">
-            <img src="/" class="card-img-top" alt="Car image">
+            <img th:src="@{${tractorDetails.imageUrl}}" class="card-img-top" alt="Tractor image">
         </div>
     </div>
     <div>

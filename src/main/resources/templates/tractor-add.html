@@ -11,6 +11,10 @@
 
     <div th:if="${successMessage}" class="alert alert-success" role="alert">
         <span th:text="${successMessage}"></span>
+        <span th:if="${newTractorId}">
+        If you want to check the newly created tractor, please click
+        <a th:href="@{/tractors/{id}(id=${newTractorId})}">here</a>.
+    </span>
     </div>
 
     <h2 class="text-center text-white">Add Tractor</h2>

@@ -5,9 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added page for adding tractors and implemented the functionality. Validations done.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/TractorDetailsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +171,7 @@
       <workItem from="1718694869679" duration="66000" />
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
-      <workItem from="1719659291995" duration="83800000" />
+      <workItem from="1719659291995" duration="94265000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -219,7 +237,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720260912686</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added page for adding tractors and implemented the functionality. Validations done.">
+      <option name="closed" value="true" />
+      <created>1720261631306</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720261631306</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added page for adding tractors and implemented the functionality. Validations done.">
+      <option name="closed" value="true" />
+      <created>1720261659174</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720261659174</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
