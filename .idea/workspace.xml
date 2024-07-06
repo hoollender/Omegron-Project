@@ -4,28 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added page for adding tractors and implemented the functionality. Validations done.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/TractorDetailsDTO.java" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Add tractor is only available for admins. Added french to i18n.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +53,6 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.OmegronApplication.executor": "Run",
     "Spring Boot.PaintingsCollectorsApplication.executor": "Run",
     "Spring Boot.ResellerApplication.executor": "Run",
@@ -171,7 +158,7 @@
       <workItem from="1718694869679" duration="66000" />
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
-      <workItem from="1719659291995" duration="94265000" />
+      <workItem from="1719659291995" duration="94955000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -253,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720261659174</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add tractor is only available for admins. Added french to i18n.">
+      <option name="closed" value="true" />
+      <created>1720275498212</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720275498212</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +274,8 @@
     <MESSAGE value="Fixed the validation errors in login page.&#10;Changed .failureForwardUrl to .failureUrl(&quot;/users/login?error=true&quot;)" />
     <MESSAGE value="Implemented client-side and server-side validation. Login and registration are done.&#10;Admin and user role added.&#10;The first user registered will be admin, everyone else is a user.&#10;Internationalization is done on welcome message." />
     <MESSAGE value="Added page for adding tractors and implemented the functionality. Validations done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added page for adding tractors and implemented the functionality. Validations done." />
+    <MESSAGE value="Add tractor is only available for admins. Added french to i18n." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tractor is only available for admins. Added french to i18n." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

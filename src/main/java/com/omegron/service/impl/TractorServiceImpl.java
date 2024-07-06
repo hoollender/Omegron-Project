@@ -22,6 +22,11 @@ public class TractorServiceImpl implements TractorService {
     }
 
     @Override
+    public void deleteTractor(long tractorId) {
+        tractorRepository.deleteById(tractorId);
+    }
+
+    @Override
     public TractorDetailsDTO getTractorDetails(Long id) {
         return this.tractorRepository.findById(id)
                 .map(TractorServiceImpl::toTractorDetails)

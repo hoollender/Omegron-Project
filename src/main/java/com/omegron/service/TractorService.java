@@ -7,6 +7,8 @@ import com.omegron.model.entity.Tractor;
 public interface TractorService {
     long addTractor(AddTractorDTO addTractorDTO);
 
+    void deleteTractor(long tractorId);
+
     TractorDetailsDTO getTractorDetails(Long id);
 
 }
