@@ -19,6 +19,6 @@ public abstract class BaseController {
             model.addAttribute("welcomeMessage", "");
         }
 
-        return "";
+        return "index";
     }
 }
