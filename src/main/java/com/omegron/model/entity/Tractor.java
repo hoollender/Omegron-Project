@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "tractors")
-public class Tractor extends BaseEntity{
+public class Tractor extends BaseEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)

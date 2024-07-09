@@ -1,5 +1,6 @@
 package com.omegron.service;
 
+
 import com.omegron.model.dto.WeatherResponseDTO;
 
 public interface WeatherService {

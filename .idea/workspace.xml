@@ -4,24 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added base controller. Changed the design of navigation and fixed login and register to be next to each other.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/RestClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherApiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/DayDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/HourDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/WeatherResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Day.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Hour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Weather.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="RestClient added. Fetching weather data from weather.bg&#10;Currently the nested DTOs doesn't work properly, searching for the bug.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/RestClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/DayDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/DayDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/HourDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/WeatherResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/WeatherResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Hour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +30,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +53,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.JsonDeserializationTest.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -89,10 +88,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.omegron.model.dto" />
-      <recent name="com.omegron.model.enums" />
       <recent name="com.omegron.repository" />
       <recent name="com.omegron.model.entity" />
+      <recent name="com.omegron.model.dto" />
+      <recent name="com.omegron.model.enums" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources" />
@@ -121,7 +120,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.OmegronApplication">
+    <configuration name="JsonDeserializationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.omegron.util.JsonDeserializationTest" />
+      <module name="Project-Omegron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.omegron.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OmegronApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="WEATHER_API_KEY" value="NGSRXC2QYU6X2Q6BJ7R2WBMA8" />
@@ -139,9 +151,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.JsonDeserializationTest" />
+      <item itemvalue="Spring Boot.OmegronApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.OmegronApplication" />
+        <item itemvalue="Application.JsonDeserializationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +188,7 @@
       <workItem from="1719245752557" duration="4663000" />
       <workItem from="1719409696242" duration="24405000" />
       <workItem from="1719659291995" duration="101997000" />
-      <workItem from="1720371326301" duration="11007000" />
+      <workItem from="1720371326301" duration="35120000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -285,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720283225447</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="RestClient added. Fetching weather data from weather.bg&#10;Currently the nested DTOs doesn't work properly, searching for the bug.">
+      <option name="closed" value="true" />
+      <created>1720383821747</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720383821747</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,21 +340,12 @@
     <MESSAGE value="Tractors can now be deleted from DB." />
     <MESSAGE value="Page with all tractors added. Redesigned the details page." />
     <MESSAGE value="Added base controller. Changed the design of navigation and fixed login and register to be next to each other." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added base controller. Changed the design of navigation and fixed login and register to be next to each other." />
+    <MESSAGE value="RestClient added. Fetching weather data from weather.bg&#10;Currently the nested DTOs doesn't work properly, searching for the bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="RestClient added. Fetching weather data from weather.bg&#10;Currently the nested DTOs doesn't work properly, searching for the bug." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/controller/RegistrationController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="org.thymeleaf.exceptions.TemplateProcessingException" package="org.thymeleaf.exceptions" />
           <option name="timeStamp" value="18" />
@@ -339,7 +355,8 @@
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="bindingResult" />
-        <watch expression="weatherResponseDTO.days" />
+        <watch expression="weatherResponseDTO.currentConditions" />
+        <watch expression="jsonResponse" />
       </configuration>
     </watches-manager>
   </component>
