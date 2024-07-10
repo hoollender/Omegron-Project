@@ -9,4 +9,6 @@ import java.util.Optional;
 @Repository
 public interface WeatherRepository extends JpaRepository<Weather, Long> {
     Optional<Weather> findByAddress(String address);
+
+    Weather findTopByOrderByIdDesc();
 }

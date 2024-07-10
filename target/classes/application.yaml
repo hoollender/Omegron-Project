@@ -36,5 +36,7 @@ server:
 weather:
   api:
     key: ${WEATHER_API_KEY:}
-    url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/2024-07-08/2024-07-22?unitGroup=metric&elements=datetime%2Cname%2Caddress%2Clatitude%2Clongitude%2Ctempmax%2Ctempmin%2Ctemp%2Csunrise%2Csunset%2Cconditions%2Cdescription%2Cicon%2Csource&include=fcst%2Cobs%2Cremote%2Cdays&key={key_id}&contentType=json"
+    url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/2024-07-08/2024-07-22?unitGroup=metric&elements=datetime,name,address,latitude,longitude,tempmax,tempmin,temp,sunrise,sunset,conditions,description,icon,source&include=fcst,obs,remote,days&key={key_id}&contentType=json"
     address: "Drenov"
+
+#%2C encoded is "," !!!

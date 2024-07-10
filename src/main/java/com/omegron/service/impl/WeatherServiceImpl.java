@@ -49,6 +49,7 @@ public class WeatherServiceImpl implements WeatherService {
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .body(WeatherResponseDTO.class);
+
     }
 
     @Override
@@ -57,6 +58,9 @@ public class WeatherServiceImpl implements WeatherService {
         if (!weatherApiConfig.getAddress().equals(weatherResponseDTO.address())) {
             throw new IllegalArgumentException("The address of the weather data is incorrect. Address should be: " + weatherApiConfig.getAddress() + ", but is: " + weatherResponseDTO.address());
         }
+
+        // Clear existing weather data before saving the new data
+        weatherRepository.deleteAll();
 
         // Manually map WeatherResponseDTO to Weather
         Weather weather = new Weather();
@@ -89,5 +93,39 @@ public class WeatherServiceImpl implements WeatherService {
         day.setIcon(dayDTO.icon());
         day.setSource(dayDTO.source());
         return day;
+    }
+
+    @Override
+    public WeatherResponseDTO getLatestWeatherData() {
+        Weather latestWeather = weatherRepository.findTopByOrderByIdDesc();
+        return mapWeatherToDTO(latestWeather);
+    }
+
+    private WeatherResponseDTO mapWeatherToDTO(Weather weather) {
+        List<DayDTO> dayDTOs = weather.getDays().stream().map(this::mapDayToDayDTO).collect(Collectors.toList());
+        return new WeatherResponseDTO(
+                weather.getQueryCost(),
+                weather.getLatitude(),
+                weather.getLongitude(),
+                weather.getResolvedAddress(),
+                weather.getAddress(),
+                weather.getTimezone(),
+                weather.getTzoffset(),
+                weather.getDescription(),
+                dayDTOs);
+    }
+
+    private DayDTO mapDayToDayDTO(Day day) {
+        return new DayDTO(
+                day.getDatetime(),
+                day.getTempmax(),
+                day.getTempmin(),
+                day.getTemp(),
+                day.getSunrise(),
+                day.getSunset(),
+                day.getConditions(),
+                day.getDescription(),
+                day.getIcon(),
+                day.getSource());
     }
 }

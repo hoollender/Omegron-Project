@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    <title>Weather Forecast</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'weather'})}"></div>
+
+<div class="container">
+    <div class="weather-container">
+        <div class="weather-header">
+            <h2 class="text-light">Weather Forecast</h2>
+            <h5 class="text-light" th:text="${weather.resolvedAddress}">Resolved Address</h5>
+            <p class="text-light" th:text="${weather.timezone}">Timezone</p>
+            <p th:text="${weather.description}">Weather description</p>
+        </div>
+        <div class="weather-details">
+            <div class="weather-item">
+                <h6>General Information</h6>
+                <p>Latitude: <span th:text="${weather.latitude}"></span></p>
+                <p>Longitude: <span th:text="${weather.longitude}"></span></p>
+                <p>Timezone Offset: <span th:text="${weather.tzoffset}"></span></p>
+            </div>
+        </div>
+        <div class="weather-days">
+            <div th:each="day : ${weather.days}" class="weather-item border-bottom">
+                <h6 th:text="${day.datetime}">Date</h6>
+                <p>Temp Max: <span th:text="${day.tempmax}"></span>°C</p>
+                <p>Current Temp: <span th:text="${day.temp()}"></span>°C</p>
+                <p>Temp Min: <span th:text="${day.tempmin}"></span>°C</p>
+                <p>Conditions: <span th:text="${day.conditions}"></span></p>
+                <p>Description: <span th:text="${day.description}"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/api/weather')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('address').textContent = data.resolvedAddress;
+                document.getElementById('timezone').textContent = data.timezone;
+                document.getElementById('description').textContent = data.description;
+
+                const daysContainer = document.querySelector('.weather-days');
+                daysContainer.innerHTML = '';
+                data.days.forEach(day => {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.classList.add('weather-item');
+                    dayDiv.innerHTML = `
+                        <h6>${day.datetime}</h6>
+                        <p>Temp Max: ${day.tempmax}°C</p>
+                        <p>Temp Min: ${day.tempmin}°C</p>
+                        <p>Conditions: ${day.conditions}</p>
+                        <p>Description: ${day.description}</p>
+                    `;
+                    daysContainer.appendChild(dayDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+    });
+</script>
+
+</body>
+</html>

@@ -10,4 +10,6 @@ public interface WeatherService {
 
     void updateWeatherData(WeatherResponseDTO weatherResponseDTO); //Will update in DB
 
+    WeatherResponseDTO getLatestWeatherData();
+
 }
