@@ -22,7 +22,8 @@
                     <a class="nav-link" href="/tractors/all" th:classappend="${activeLink == 'all-tractors'}? 'active'">All
                         Tractors</a>
                 </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()" th:classappend="${activeLink == 'weather'} ? 'active'">
+                <li class="nav-item" sec:authorize="isAuthenticated()"
+                    th:classappend="${activeLink == 'weather'} ? 'active'">
                     <a class="nav-link" th:href="@{/weather}">Weather</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -38,7 +39,8 @@
                         Admin
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/tractors/add" th:classappend="${activeLink == 'add-tractor'}? 'active'">Add Tractor</a>
+                        <a class="dropdown-item" href="/tractors/add"
+                           th:classappend="${activeLink == 'add-tractor'}? 'active'">Add Tractor</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>

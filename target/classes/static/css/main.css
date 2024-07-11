@@ -113,3 +113,49 @@ footer {
      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/*WEATHER SETTINGS*/
+/* style.css */
+.weather-item:not(:last-child) {
+     border-bottom: 1px solid #dee2e6;
+     margin-bottom: 1rem;
+     padding-bottom: 1rem;
+}
+.weather-container {
+     background-color: #045a2c;
+     background-image: url('/images/weather-bg.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+
+     padding: 2rem;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     margin-top: 2rem;
+}
+.weather-header {
+     text-align: center;
+     margin-bottom: 2rem;
+}
+.weather-details, .weather-days {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.weather-item {
+     margin: 1rem;
+     padding: 1rem;
+     border-radius: 10px;
+     background-color: #6c6c6c;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+     flex: 1 1 300px;
+     max-width: 300px;
+}
+.weather-item h6 {
+     margin-bottom: 0.5rem;
+     font-weight: bold;
+}
+.weather-item p {
+     margin-bottom: 0.25rem;
+}
+.weather-days .weather-item {
+     background-color: #41bdff;
+}

@@ -3,6 +3,7 @@ package com.omegron.init;
 import com.omegron.model.entity.Role;
 import com.omegron.model.enums.RoleEnum;
 import com.omegron.repository.RoleRepository;
+import com.omegron.repository.WeatherRepository;
 import com.omegron.service.WeatherService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ public class InitService implements CommandLineRunner {
     private final RoleRepository roleRepository;
     private final WeatherService weatherService;
 
-    public InitService(RoleRepository roleRepository, WeatherService weatherService) {
+    public InitService(RoleRepository roleRepository, WeatherService weatherService, WeatherRepository weatherRepository) {
         this.roleRepository = roleRepository;
         this.weatherService = weatherService;
     }
@@ -31,7 +32,7 @@ public class InitService implements CommandLineRunner {
             roleRepository.save(adminRole);
         }
 
-        if(!weatherService.hasInitializedWeatherData()){ //Checks if there's weather data in DB
+        if (!weatherService.hasInitializedWeatherData()) { //Checks if there's weather data in DB
             weatherService.updateWeatherData(
                     weatherService.fetchWeatherData()
             );

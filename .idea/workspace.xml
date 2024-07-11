@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Reduced the amount of requested information from weather.bg&#10;Something is wrong with the get request. The nested JSON doesn't show properly (filled with zeros). Still searching for a solution.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/WeatherRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherUpdateScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/OmegronApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/OmegronApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,7 @@
       <workItem from="1719409696242" duration="24405000" />
       <workItem from="1719659291995" duration="101997000" />
       <workItem from="1720371326301" duration="39551000" />
-      <workItem from="1720616720625" duration="10731000" />
+      <workItem from="1720616720625" duration="19113000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -316,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720536464789</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API.">
+      <option name="closed" value="true" />
+      <created>1720635319355</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720635319356</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +352,8 @@
     <MESSAGE value="Added base controller. Changed the design of navigation and fixed login and register to be next to each other." />
     <MESSAGE value="RestClient added. Fetching weather data from weather.bg&#10;Currently the nested DTOs doesn't work properly, searching for the bug." />
     <MESSAGE value="Reduced the amount of requested information from weather.bg&#10;Something is wrong with the get request. The nested JSON doesn't show properly (filled with zeros). Still searching for a solution." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reduced the amount of requested information from weather.bg&#10;Something is wrong with the get request. The nested JSON doesn't show properly (filled with zeros). Still searching for a solution." />
+    <MESSAGE value="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API." />
+    <option name="LAST_COMMIT_MESSAGE" value="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -357,11 +362,6 @@
           <properties class="org.thymeleaf.exceptions.TemplateProcessingException" package="org.thymeleaf.exceptions" />
           <option name="timeStamp" value="18" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

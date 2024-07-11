@@ -40,8 +40,8 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('/api/weather')
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/api/weather/')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('address').textContent = data.resolvedAddress;
