@@ -4,32 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/InternationalizationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/InternationalizationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages_de.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages_fr.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore.">
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserRegisterDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +186,7 @@
       <workItem from="1720616720625" duration="37628000" />
       <workItem from="1721017126802" duration="11323000" />
       <workItem from="1721037414990" duration="13085000" />
-      <workItem from="1721054407244" duration="7558000" />
+      <workItem from="1721054407244" duration="7846000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -368,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721040489495</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore.">
+      <option name="closed" value="true" />
+      <created>1721062807613</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1721062807613</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +392,8 @@
     <MESSAGE value="Implemented scheduler to update the DB with newest weather data (every 2 hours).&#10;When the weather page is requested it takes the data from DB." />
     <MESSAGE value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
     <MESSAGE value="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast." />
+    <MESSAGE value="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

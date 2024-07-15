@@ -7,33 +7,33 @@
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'login'})}"></div>
 
 <div class="container">
-    <h2 class="text-center text-white">Login</h2>
-    <form th:method="post"
+    <h2 class="text-center text-white" th:text="#{login_text}">Login</h2>
+    <form th:method="POST"
           th:action="@{/users/login}"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="form-group">
-            <label for="email" class="text-white font-weight-bold">Email</label>
+            <label for="email" class="text-white font-weight-bold" th:text="#{email_text}">E-Mail</label>
             <input id="email"
                    name="email"
                    type="text"
                    class="form-control"
-                   placeholder="Enter email"/>
+                   th:placeholder="#{enter_email_text}"/>
         </div>
         <div class="form-group">
-            <label for="password" class="text-white font-weight-bold">Password</label>
+            <label for="password" class="text-white font-weight-bold" th:text="#{password_text}">Password</label>
             <input id="password"
                    name="password"
                    type="password"
                    class="form-control"
-                   placeholder="Enter password"/>
+                   th:placeholder="#{enter_password_text}"/>
         </div>
 
-        <div th:if="${param.error}" class="errors alert alert-danger">Invalid email or password!</div>
+        <div th:if="${showErrorMessage}" class="errors alert alert-danger" th:text="#{login_error}">Invalid E-Mail or password!</div>
 
         <div class="row">
             <div class="col col-md-4">
                 <div class="button-holder d-flex">
-                    <input type="submit" class="btn btn-success btn-lg" value="Login"/>
+                    <input type="submit" class="btn btn-success btn-lg" th:value="#{login_text}"/>
                 </div>
             </div>
         </div>
