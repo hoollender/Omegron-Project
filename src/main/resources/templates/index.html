@@ -1,45 +1,34 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
->
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:replace="~{fragments/commons::head}"></head>
-<body>
-<div th:replace="~{fragments/navbar::navbar(activeLink=${'home'})}"></div>
 
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'home'})}"></div>
 
 <div class="container-fluid index">
 
-    <div class="language-selection">
-        <a href="?lang=en" class="btn btn-primary">English</a>
-        <a href="?lang=de" class="btn btn-primary">Deutsch</a>
-        <a href="?lang=fr" class="btn btn-primary">French</a>
-    </div>
-
-    <h1 class="text-center text-white mt-5"><th:block th:text="#{welcomeMessage}"></th:block><th:block th:text="${welcomeMessage}"></th:block>!</h1>
-    <hr class="my-3 bg-white w-50">
-<!--    If user isn't logged in-->
-    <p class="h4" sec:authorize="!isAuthenticated()" th:text="#{not.authenticated.message}">
-       </p>
+    <h1 class="text-center text-white mt-5"><th:block th:text="#{welcome_message}"></th:block><th:block th:text="${welcome_message}"></th:block>!</h1>
+    <hr class="my-3 bg-white w-75">
+    <!--    If user isn't logged in-->
+    <p class="h4" sec:authorize="!isAuthenticated()" th:text="#{not_authenticated_msg}"></p>
     <!--    If user is logged in-->
 
-    <p class="h4" sec:authorize="isAuthenticated()" th:text="#{authenticated.message}"></p>
-    <hr class="my-3 bg-white w-75"/>
+    <p class="h4" sec:authorize="isAuthenticated()" th:text="#{authenticated_msg}"></p>
+    <hr class="my-3 bg-white w-100"/>
 
     <h3 sec:authorize="!isAuthenticated()">
-        <a class="primary-text"  th:href="@{/users/login}">Login</a>
-        if you have an account or
-        <a class="primary-text" th:href="@{/users/register}">Register</a>
-        now and check our paintings.
+        <a class="primary-text"  th:href="@{/users/login}" th:text="#{login_text_index}"></a>
+        <p th:text="#{call_to_action_after_login}"></p>
+        <a class="primary-text" th:href="@{/users/register}" th:text="#{register_text_index}"></a>
+        <p th:text="#{call_to_action_after_register}"></p>
+    <hr class="my-3 bg-white w-100"/>
     </h3>
+    <p class="h4" th:text="#{warning_app_under_construction}"></p>
+    <p class="h4" th:text="#{warning_app_under_construction_report_bug}"></p>
 
-    <p class="h4 separate">
-        🚧🚧🚧
-        <br>
-        ⚠️The application is still under construction!  Please excuse us for the inconvenience!⚠️
-        <br>
-        <br>
-        If you find a bug, please report and send it to the developer: k.ivanov.dceo@gmail.com</p>
 </div>
 </body>
     <footer th:replace="~{fragments/commons::footer}"></footer>

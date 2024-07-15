@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 //TODO: Fix welcome "username" on index page and all others.
 public abstract class BaseController {
 
-    @ModelAttribute("welcomeMessage")
+    @ModelAttribute("welcome_message")
     public String home(@AuthenticationPrincipal UserDetails userDetails,
                        Model model) {
 
         if (userDetails instanceof OmegronUserDetails omegronUserDetails) {
-            model.addAttribute("welcomeMessage", ", " + omegronUserDetails.getFirstName());
+            model.addAttribute("welcome_message", ", " + omegronUserDetails.getFirstName());
         } else {
-            model.addAttribute("welcomeMessage", "");
+            model.addAttribute("welcome_message", "");
         }
 
         return "index";

@@ -3,20 +3,24 @@ package com.omegron.model.dto;
 import jakarta.validation.constraints.*;
 
 public class UserRegisterDTO {
-    @NotBlank(message = "Username is required!")
-    @Size(min = 3, max = 50, message = "First name length must be between 3 and 50 characters!")
+    @NotBlank(message = "{firstName.required}")
+    @Size(min = 3, max = 50, message = "{firstName.size}")
     private String firstName;
-    @NotBlank(message = "Username is required!")
-    @Size(min = 3, max = 50, message = "Last name length must be between 3 and 50 characters!")
+
+    @NotBlank(message = "{lastName.required}")
+    @Size(min = 3, max = 50, message = "{lastName.size}")
     private String lastName;
-    @NotBlank(message = "Email is required!")
-    @Email(message = "Please provide a valid email address!")
+
+    @NotBlank(message = "{email.required}")
+    @Email(message = "{email.invalid}")
     private String email;
-    @NotBlank(message = "Password is required!")
-    @Size(min = 3, max = 20, message = "Password length must be between 3 and 20 characters!")
+
+    @NotBlank(message = "{password.required}")
+    @Size(min = 3, max = 20, message = "{password.size}")
     private String password;
-    @NotBlank(message = "Confirm password is required!")
-    @Size(min = 3, max = 20, message = "Confirm password length must be between 3 and 20 characters!")
+
+    @NotBlank(message = "{confirmPassword.required}")
+    @Size(min = 3, max = 20, message = "{confirmPassword.size}")
     private String confirmPassword;
 
 

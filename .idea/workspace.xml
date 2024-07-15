@@ -4,13 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/util/DateUtil.java" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserRegisterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/InternationalizationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/InternationalizationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages_de.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/messages_fr.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +87,15 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
 }</component>
@@ -92,6 +114,7 @@
       <recent name="C:\Users\User\Videos\PaintingsCollectors-App\src\main\java\com\paintingscollectors\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\i18n" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\templates" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\static" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources" />
@@ -182,7 +205,8 @@
       <workItem from="1720371326301" duration="39551000" />
       <workItem from="1720616720625" duration="37628000" />
       <workItem from="1721017126802" duration="11323000" />
-      <workItem from="1721037414990" duration="2878000" />
+      <workItem from="1721037414990" duration="13085000" />
+      <workItem from="1721054407244" duration="7558000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -336,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721037645040</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast.">
+      <option name="closed" value="true" />
+      <created>1721040489495</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1721040489495</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +403,8 @@
     <MESSAGE value="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API." />
     <MESSAGE value="Implemented scheduler to update the DB with newest weather data (every 2 hours).&#10;When the weather page is requested it takes the data from DB." />
     <MESSAGE value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
+    <MESSAGE value="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
 <div th:fragment="navbar(activeLink)">
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #343a40;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <a class="navbar-brand" href="/"><img alt="omegron logo" src="/images/logo.png" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,31 +14,36 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/brands/all">All Brands</a>
+                    <a class="nav-link" href="/brands/all"
+                       th:classappend="${activeLink == 'brands'}? 'active'"
+                       th:text="#{nav_bar_all_brands}">All Brands</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/tractors/all" th:classappend="${activeLink == 'all-tractors'}? 'active'">All
-                        Tractors</a>
+                    <a class="nav-link" href="/tractors/all"
+                       th:classappend="${activeLink == 'all-tractors'}? 'active'"
+                       th:text="#{nav_bar_all_tractors}">All Tractors</a>
                 </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()"
-                    th:classappend="${activeLink == 'weather'} ? 'active'">
-                    <a class="nav-link" th:href="@{/weather}">Weather</a>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" href="/weather"
+                       th:classappend="${activeLink == 'weather'} ? 'active'"
+                       th:text="#{nav_bar_weather}">Weather</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="nav-item form-control mr-sm-2" type="search" placeholder="Under construction :)"
+                        <input class="form-control mr-sm-2" type="search" th:placeholder="#{nav_bar_search_field}"
                                aria-label="Search">
-                        <button class="nav-item btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" th:text="#{nav_bar_search}">Search</button>
                     </form>
                 </li>
                 <li class="nav-item dropdown" sec:authorize="hasRole('ADMIN')">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admin
+                        <span th:text="#{nav_bar_admin}">Admin</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/tractors/add"
-                           th:classappend="${activeLink == 'add-tractor'}? 'active'">Add Tractor</a>
+                           th:classappend="${activeLink == 'add-tractor'}? 'active'"
+                           th:text="#{nav_bar_add_tractor}">Add Tractor</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
@@ -49,20 +52,33 @@
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item d-flex align-items-center" sec:authorize="isAuthenticated()">
-                    <div class="logged-user text-light mr-1">Welcome</div>
-                    <div class="logged-user text-light" th:text="${welcomeMessage}">somebody</div>
                     <form th:method="post" th:action="@{/users/logout}" class="ml-3 mb-0">
-                        <input class="btn btn-outline-light" type="submit" value="Logout"/>
+                        <input class="btn btn-outline-light" type="submit" th:value="#{nav_bar_logout}"/>
                     </form>
                 </li>
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" href="/users/login"
-                       th:classappend="${activeLink == 'login'}? 'active'">Login</a>
+                       th:classappend="${activeLink == 'login'}? 'active'"
+                       th:text="#{nav_bar_login}">Login</a>
                 </li>
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
                     <a class="nav-link" href="/users/register"
-                       th:classappend="${activeLink == 'register'}? 'active'">Register</a>
+                       th:classappend="${activeLink == 'register'}? 'active'"
+                       th:text="#{nav_bar_register}">Register</a>
                 </li>
+
+                <li class="nav-item btn">
+                    <form th:method="get">
+<!--                        <label class="nav-link text-white" for="lang" th:text="#{nav_bar_language}">Language</label>-->
+                        <select id="lang" name="lang" class="form-control ml-2" onchange="this.form.submit()">
+                            <option value="en_US" th:selected="${#locale.toString()} == 'en_US'">English</option>
+                            <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">Български</option>
+                            <option value="de_DE" th:selected="${#locale.toString()} == 'de_DE'">Deutsch</option>
+                            <option value="fr_FR" th:selected="${#locale.toString()} == 'fr_FR'">French</option>
+                        </select>
+                    </form>
+                </li>
+
             </ul>
         </div>
     </nav>
