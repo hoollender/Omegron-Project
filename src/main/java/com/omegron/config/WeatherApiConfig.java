@@ -40,19 +40,20 @@ public class WeatherApiConfig {
     }
 
     @PostConstruct
-    public void checkConfiguration(){
+    public void checkConfiguration() {
         verifyNotNullOrEmpty("key", key);
         verifyNotNullOrEmpty("url", url);
         verifyNotNullOrEmpty("address", address);
 
-        if (!"Drenov".equals(address)){
+        if (!"Drenov".equals(address)) {
             throw new IllegalStateException("Sorry, but the free API supports Drenov only!");
         }
 
     }
-    private static void verifyNotNullOrEmpty(String name, String value){
-        if (value == null || value.isBlank()){
-            throw  new IllegalArgumentException("Property " + name + " cannot be null or empty.");
+
+    private static void verifyNotNullOrEmpty(String name, String value) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException("Property " + name + " cannot be null or empty.");
         }
     }
 }

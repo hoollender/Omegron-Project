@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/tractors")
-public class TractorsController extends BaseController{
+public class TractorsController extends BaseController {
     private final TractorService tractorService;
 
     public TractorsController(TractorService tractorService) {
         this.tractorService = tractorService;
     }
+
     @GetMapping("/all")
     public String getAllTractors(Model model) {
         model.addAttribute("allTractors", tractorService.getAllTractorsSummary());

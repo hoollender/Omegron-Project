@@ -80,6 +80,15 @@ public class WeatherServiceImpl implements WeatherService {
         weatherRepository.save(weather);
     }
 
+    // Retrieves the last saved info from DB.
+    @Override
+    public WeatherResponseDTO getLatestWeatherData() {
+        Weather latestWeather = weatherRepository.findTopByOrderByIdDesc();
+        return mapWeatherToDTO(latestWeather);
+    }
+
+
+    //Maps from DayDTO to Day Entity
     private Day mapDayDTOToDay(DayDTO dayDTO) {
         Day day = new Day();
         day.setDatetime(dayDTO.datetime());
@@ -95,12 +104,7 @@ public class WeatherServiceImpl implements WeatherService {
         return day;
     }
 
-    @Override
-    public WeatherResponseDTO getLatestWeatherData() {
-        Weather latestWeather = weatherRepository.findTopByOrderByIdDesc();
-        return mapWeatherToDTO(latestWeather);
-    }
-
+    //Maps from Weather Entity to DayDTO
     private WeatherResponseDTO mapWeatherToDTO(Weather weather) {
         List<DayDTO> dayDTOs = weather.getDays().stream().map(this::mapDayToDayDTO).collect(Collectors.toList());
         return new WeatherResponseDTO(
@@ -115,6 +119,7 @@ public class WeatherServiceImpl implements WeatherService {
                 dayDTOs);
     }
 
+    //Maps from Day Entity to DayDTO
     private DayDTO mapDayToDayDTO(Day day) {
         return new DayDTO(
                 day.getDatetime(),

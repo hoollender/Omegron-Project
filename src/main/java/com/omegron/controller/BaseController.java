@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
+
 //TODO: Fix welcome "username" on index page and all others.
 public abstract class BaseController {
 

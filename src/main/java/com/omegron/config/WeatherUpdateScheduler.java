@@ -1,7 +1,6 @@
 package com.omegron.config;
 
-import com.omegron.model.dto.WeatherResponseDTO;
-import com.omegron.service.WeatherService;
+import com.omegron.service.WeatherClientService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -10,20 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class WeatherUpdateScheduler {
     private static final Logger LOGGER = LoggerFactory.getLogger(WeatherUpdateScheduler.class);
-    private final WeatherService weatherService;
+    private final WeatherClientService weatherClientService;
 
-    public WeatherUpdateScheduler(WeatherService weatherService) {
-
-        this.weatherService = weatherService;
+    public WeatherUpdateScheduler(WeatherClientService weatherClientService) {
+        this.weatherClientService = weatherClientService;
     }
 
-    //    @Scheduled(cron = "*/10 * * * * *") // Every 10 seconds
+    //@Scheduled(cron = "*/120 * * * * *") // Every 10 seconds
     @Scheduled(cron = "0 0 */2 * * *") // Every 2 hours
     public void updateWeatherData() {
         LOGGER.info("Updating weather data...");
-        WeatherResponseDTO weatherResponseDTO = weatherService.fetchWeatherData();
-        weatherService.updateWeatherData(weatherResponseDTO);
+        weatherClientService.updateWeatherData();
         LOGGER.info("Weather data updated.");
-
     }
 }

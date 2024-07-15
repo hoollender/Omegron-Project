@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/tractors")
-public class TractorController extends BaseController{
+public class TractorController extends BaseController {
 
     private final TractorService tractorService;
 
@@ -25,8 +25,8 @@ public class TractorController extends BaseController{
 
     @GetMapping("/add")
     public String addTractor(Model model) {
-        if(!model.containsAttribute("addTractorDTO")) {
-        model.addAttribute("addTractorDTO", AddTractorDTO.empty());
+        if (!model.containsAttribute("addTractorDTO")) {
+            model.addAttribute("addTractorDTO", AddTractorDTO.empty());
         }
 
         model.addAttribute("allEngineTypes", EngineTypeEnum.values());
@@ -36,7 +36,7 @@ public class TractorController extends BaseController{
     }
 
     @PostMapping("/add")
-    public String doAddTractor (@Valid AddTractorDTO addTractorDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+    public String doAddTractor(@Valid AddTractorDTO addTractorDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("addTractorDTO", addTractorDTO);
