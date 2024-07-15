@@ -4,33 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Implemented scheduler to update the DB with newest weather data (every 2 hours).&#10;When the weather page is requested it takes the data from DB.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherClientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherClientServiceImpl.java" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/util/DateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/InternationalizationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherApiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherUpdateScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherUpdateScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/WeatherRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/WeatherRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/OmegronApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/OmegronApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +23,8 @@
         <option value="Enum" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -202,7 +182,7 @@
       <workItem from="1720371326301" duration="39551000" />
       <workItem from="1720616720625" duration="37628000" />
       <workItem from="1721017126802" duration="11323000" />
-      <workItem from="1721037414990" duration="132000" />
+      <workItem from="1721037414990" duration="2878000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -348,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720712097437</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API.">
+      <option name="closed" value="true" />
+      <created>1721037645040</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1721037645040</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +370,8 @@
     <MESSAGE value="Reduced the amount of requested information from weather.bg&#10;Something is wrong with the get request. The nested JSON doesn't show properly (filled with zeros). Still searching for a solution." />
     <MESSAGE value="The weather error is fixed. New weather page added and it shows dynamically the forecast for 15 days.&#10;Used the Thymeleaf template engine and JavaScript to consume REST services from a Web API." />
     <MESSAGE value="Implemented scheduler to update the DB with newest weather data (every 2 hours).&#10;When the weather page is requested it takes the data from DB." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented scheduler to update the DB with newest weather data (every 2 hours).&#10;When the weather page is requested it takes the data from DB." />
+    <MESSAGE value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
+    <option name="LAST_COMMIT_MESSAGE" value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

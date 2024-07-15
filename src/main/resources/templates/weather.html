@@ -27,10 +27,11 @@
             </div>
         </div>
         <div class="weather-days">
-            <div th:each="day : ${weather.days}" class="weather-item border-bottom">
+            <div th:each="day : ${weather.days}" class="weather-item"
+                 th:classappend="${day.datetime} == ${currentDate} ? 'current-day'">
                 <h6 th:text="${day.datetime}">Date</h6>
                 <p>Temp Max: <span th:text="${day.tempmax}"></span>°C</p>
-                <p>Current Temp: <span th:text="${day.temp()}"></span>°C</p>
+                <p>Current Temp: <span th:text="${day.temp}"></span>°C</p>
                 <p>Temp Min: <span th:text="${day.tempmin}"></span>°C</p>
                 <p>Conditions: <span th:text="${day.conditions}"></span></p>
                 <p>Description: <span th:text="${day.description}"></span></p>

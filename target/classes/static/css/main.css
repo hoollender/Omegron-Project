@@ -56,6 +56,7 @@ form.main-form {
      color: white;
 }
 
+
 /*ADDED*/
 .primary-text {
      color: rgb(218, 218, 218);
@@ -107,25 +108,21 @@ footer {
      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
      /*The warning section*/
 }
-/* NAVBAR SETTINGS*/
+/* NAVBAR STYLES*/
 .nav-item {
      font-size: large;
      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-/*WEATHER SETTINGS*/
-/* style.css */
+/* WEATHER STYLES */
 .weather-item:not(:last-child) {
      border-bottom: 1px solid #dee2e6;
      margin-bottom: 1rem;
      padding-bottom: 1rem;
 }
 .weather-container {
-     background-color: #045a2c;
      background-image: url('/images/weather-bg.jpg');
      background-repeat: no-repeat;
      background-size: cover;
-
      padding: 2rem;
      border-radius: 10px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -158,4 +155,7 @@ footer {
 }
 .weather-days .weather-item {
      background-color: #41bdff;
+}
+.current-day {
+     background-color: #1d4c1a !important; /* Change this to whatever color you prefer */
 }
