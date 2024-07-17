@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body>
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'tractor-update'})}"></div>
+
+<div class="container-fluid">
+    <h2 class="text-center text-white mt-5">Update Tractor Details</h2>
+    <div th:object="${tractorDetails}" class="row mx-auto d-flex flex-row justify-content-center">
+        <div class="card col-sm-6 col-md-5 col-lg-4 m-3 p-0 bg-secondary text-light">
+            <div class="card-body">
+                <form th:action="@{/tractors/update/{id}(id=*{id})}" th:method="post" th:object="${tractorDetails}">
+                    <div class="form-group">
+                        <label for="manufacturer">Manufacturer:</label>
+                        <select class="form-control" id="manufacturer" th:field="*{manufacturer}">
+                            <option th:each="manufacturer : ${allManufacturers}" th:value="${manufacturer}" th:text="${manufacturer}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model:</label>
+                        <input type="text" class="form-control" id="model" th:field="*{model}">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year:</label>
+                        <input type="number" class="form-control" id="year" th:field="*{year}" min="1900" max="2099" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" th:field="*{description}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="workHours">Work hours:</label>
+                        <input type="number" class="form-control" id="workHours" th:field="*{workHours}">
+                    </div>
+                    <div class="form-group">
+                        <label for="engineType">Engine type:</label>
+                        <select class="form-control" id="engineType" th:field="*{engineType}">
+                            <option value="">- Select engine type -</option>
+                            <option th:each="type : ${allEngineTypes}" th:value="${type}" th:text="${type}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transmissionType">Transmission type:</label>
+                        <select class="form-control" id="transmissionType" th:field="*{transmissionType}">
+                            <option value="">- Select transmission type -</option>
+                            <option th:each="type : ${allTransmissionTypes}" th:value="${type}" th:text="${type}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL:</label>
+                        <input type="url" class="form-control" id="imageUrl" th:field="*{imageUrl}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+        <div class="card col-sm-6 col-md-5 col-lg-4 m-3 p-0">
+            <img th:src="@{${tractorDetails.imageUrl}}" class="card-img-top" alt="Tractor image">
+        </div>
+    </div>
+    <div>
+        <footer th:replace="~{fragments/commons::footer}"></footer>
+    </div>
+</div>
+
+</body>
+</html>

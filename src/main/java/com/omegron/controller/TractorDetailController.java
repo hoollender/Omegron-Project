@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/tractors")
+@RequestMapping("/tractors/details")
 public class TractorDetailController extends BaseController {
 
     private final TractorService tractorService;

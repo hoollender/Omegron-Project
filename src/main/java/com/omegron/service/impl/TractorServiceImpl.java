@@ -25,6 +25,20 @@ public class TractorServiceImpl implements TractorService {
     }
 
     @Override
+    public void updateTractor(Long id, TractorDetailsDTO tractorDetailsDTO) {
+        Tractor tractor = tractorRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid tractor Id:" + id));
+        tractor.setManufacturer(tractorDetailsDTO.manufacturer());
+        tractor.setModel(tractorDetailsDTO.model());
+        tractor.setYear(tractorDetailsDTO.year());
+        tractor.setDescription(tractorDetailsDTO.description());
+        tractor.setWorkHours(tractorDetailsDTO.workHours());
+        tractor.setEngine(tractorDetailsDTO.engineType());
+        tractor.setTransmission(tractorDetailsDTO.transmissionType());
+        tractorRepository.save(tractor);
+    }
+
+    @Override
     public void deleteTractor(long tractorId) {
         tractorRepository.deleteById(tractorId);
     }
@@ -45,6 +59,15 @@ public class TractorServiceImpl implements TractorService {
                 .toList();
     }
 
+    @Override
+    public TractorDetailsDTO findById(Long id) {
+        Tractor tractor = tractorRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid tractor Id:" + id));
+        return mapToTractorDetailsDTO(tractor);
+
+    }
+
+    //MAPPING
     private static TractorSummaryDTO toTractorSummary(Tractor tractor) {
         return new TractorSummaryDTO(tractor.getId(),
                 tractor.getManufacturer(),
@@ -57,7 +80,7 @@ public class TractorServiceImpl implements TractorService {
                 tractor.getTransmission());
     }
 
-    private static TractorDetailsDTO toTractorDetails(Tractor tractor){
+    private static TractorDetailsDTO toTractorDetails(Tractor tractor) {
         return new TractorDetailsDTO(tractor.getId(),
                 tractor.getManufacturer(),
                 tractor.getModel(),
@@ -69,7 +92,20 @@ public class TractorServiceImpl implements TractorService {
                 tractor.getTransmission());
     }
 
-    private static Tractor map(AddTractorDTO addTractorDTO){
+    private TractorDetailsDTO mapToTractorDetailsDTO(Tractor tractor) {
+        return new TractorDetailsDTO(
+                tractor.getId(),
+                tractor.getManufacturer(),
+                tractor.getModel(),
+                tractor.getYear(),
+                tractor.getDescription(),
+                tractor.getWorkHours(),
+                tractor.getImageUrl(),
+                tractor.getEngine(),
+                tractor.getTransmission());
+    }
+
+    private static Tractor map(AddTractorDTO addTractorDTO) {
         return new Tractor()
                 .setManufacturer(addTractorDTO.manufacturer())
                 .setModel(addTractorDTO.model())

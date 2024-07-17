@@ -1,6 +1,7 @@
 package com.omegron.controller;
 
 import com.omegron.model.dto.AddTractorDTO;
+import com.omegron.model.dto.TractorDetailsDTO;
 import com.omegron.model.enums.EngineTypeEnum;
 import com.omegron.model.enums.ManufacturersEnum;
 import com.omegron.model.enums.TransmissionTypeEnum;
@@ -22,6 +23,7 @@ public class TractorController extends BaseController {
         this.tractorService = tractorService;
     }
 
+//ADDING A TRACTOR
 
     @GetMapping("/add")
     public String addTractor(Model model) {
@@ -50,6 +52,26 @@ public class TractorController extends BaseController {
 
         return "redirect:/tractors/add";
     }
+// UPDATING A TRACTOR
+
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable Long id, Model model) {
+        TractorDetailsDTO tractorDetails = tractorService.findById(id);
+        model.addAttribute("tractorDetails", tractorDetails);
+        model.addAttribute("allEngineTypes", EngineTypeEnum.values());
+        model.addAttribute("allTransmissionTypes", TransmissionTypeEnum.values());
+        model.addAttribute("allManufacturers", ManufacturersEnum.values());
+        return "tractor-update";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateTractor(@PathVariable Long id, @ModelAttribute("tractorDetails") TractorDetailsDTO tractorDetailsDTO) {
+        tractorService.updateTractor(id, tractorDetailsDTO);
+        return "redirect:/tractors/details/" + id; // Redirect to the details page or any other appropriate page
+    }
+
+
+//DELETING A TRACTOR
 
     @DeleteMapping("/{id}")
     public String deleteTractor(@PathVariable("id") Long id) {

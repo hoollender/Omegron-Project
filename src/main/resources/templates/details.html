@@ -25,7 +25,7 @@
                     </li>
                 </ul>
                 <div class="card-body" sec:authorize="hasRole('ADMIN')">
-                    <a class="btn btn-success" href="/">Update</a>
+                    <a class="btn btn-success" th:href="@{/tractors/update/{id}(id=*{id})}">Update</a>
                     <form th:method="delete" th:action="@{/tractors/{id}(id=*{id})}" class="d-inline">
                         <input class="btn btn-danger" type="submit" value="Delete"/>
                     </form>
@@ -40,8 +40,6 @@
         <footer th:replace="~{fragments/commons::footer}"></footer>
     </div>
 </div>
-
-<!--<script th:src="@{/js/currency.js}"></script>-->
 
 </body>
 </html>
