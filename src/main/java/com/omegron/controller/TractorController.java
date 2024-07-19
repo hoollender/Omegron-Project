@@ -48,12 +48,13 @@ public class TractorController {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addTractorDTO", bindingResult);
             return "redirect:/tractors/add";
         }
-        long newTractorId = tractorService.addTractor(addTractorDTO);
+        tractorService.addTractor(addTractorDTO);
 
-        redirectAttributes.addFlashAttribute("successMessage", "Tractor added successfully!");
-        redirectAttributes.addFlashAttribute("newTractorId", newTractorId);
+        //TODO: Fix to show successfully added message.
+//        redirectAttributes.addFlashAttribute("successMessage", "Tractor added successfully!");
+//        redirectAttributes.addFlashAttribute("newTractorId", newTractorId);
 
-        return "redirect:/tractors/add";
+        return "redirect:/tractors/all";
     }
 // UPDATING A TRACTOR
 

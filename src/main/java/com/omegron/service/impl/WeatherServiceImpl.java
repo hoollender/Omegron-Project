@@ -11,6 +11,7 @@ import com.omegron.service.WeatherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -29,7 +30,7 @@ public class WeatherServiceImpl implements WeatherService {
     private final ObjectMapper objectMapper;
 
     @Autowired
-    public WeatherServiceImpl(WeatherRepository weatherRepository, RestClient restClient, WeatherApiConfig weatherApiConfig, ObjectMapper objectMapper) {
+    public WeatherServiceImpl(WeatherRepository weatherRepository, @Qualifier("genericRestClient") RestClient restClient, WeatherApiConfig weatherApiConfig, ObjectMapper objectMapper) {
         this.weatherRepository = weatherRepository;
         this.restClient = restClient;
         this.weatherApiConfig = weatherApiConfig;

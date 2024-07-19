@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TractorService {
 
-    long addTractor(AddTractorDTO addTractorDTO);
+    void addTractor(AddTractorDTO addTractorDTO);
 
     void updateTractor(Long id, TractorDetailsDTO tractorDetailsDTO);
 

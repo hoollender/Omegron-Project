@@ -3,117 +3,79 @@ package com.omegron.service.impl;
 import com.omegron.model.dto.AddTractorDTO;
 import com.omegron.model.dto.TractorDetailsDTO;
 import com.omegron.model.dto.TractorSummaryDTO;
-import com.omegron.model.entity.Tractor;
-import com.omegron.repository.TractorRepository;
 import com.omegron.service.TractorService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
 
 import java.util.List;
 
 @Service
 public class TractorServiceImpl implements TractorService {
 
-    private TractorRepository tractorRepository;
+    private final RestClient inventoryRestClient;
 
-    public TractorServiceImpl(TractorRepository tractorRepository) {
-        this.tractorRepository = tractorRepository;
+
+    public TractorServiceImpl(
+            @Qualifier("inventoryRestClient") RestClient inventoryRestClient) {
+        this.inventoryRestClient = inventoryRestClient;
+
     }
 
     @Override
-    public long addTractor(AddTractorDTO addTractorDTO) {
-        return tractorRepository.save(map(addTractorDTO)).getId();
+    public void addTractor(AddTractorDTO addTractorDTO) {
+        inventoryRestClient
+                .post()
+                .uri("http://localhost:8081/tractors/add")
+                .body(addTractorDTO)
+                .retrieve();
     }
 
     @Override
     public void updateTractor(Long id, TractorDetailsDTO tractorDetailsDTO) {
-        Tractor tractor = tractorRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid tractor Id:" + id));
-        tractor.setManufacturer(tractorDetailsDTO.manufacturer());
-        tractor.setModel(tractorDetailsDTO.model());
-        tractor.setYear(tractorDetailsDTO.year());
-        tractor.setDescription(tractorDetailsDTO.description());
-        tractor.setWorkHours(tractorDetailsDTO.workHours());
-        tractor.setEngine(tractorDetailsDTO.engineType());
-        tractor.setTransmission(tractorDetailsDTO.transmissionType());
-        tractorRepository.save(tractor);
+        inventoryRestClient
+                .put()
+                .uri("http://localhost:8081/tractors/update/{id}", id)
+                .body(tractorDetailsDTO)
+                .retrieve()
+                .toBodilessEntity();
     }
 
     @Override
     public void deleteTractor(long tractorId) {
-        tractorRepository.deleteById(tractorId);
+        inventoryRestClient
+                .delete()
+                .uri("http://localhost:8081/tractors/{id}", tractorId)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .toBodilessEntity();
     }
 
     @Override
     public TractorDetailsDTO getTractorDetails(Long id) {
-        return this.tractorRepository.findById(id)
-                .map(TractorServiceImpl::toTractorDetails)
-                .orElseThrow();
+        return inventoryRestClient
+                .get()
+                .uri("http://localhost:8081/tractors/details/{id}", id)
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .body(TractorDetailsDTO.class);
     }
 
     @Override
     public List<TractorSummaryDTO> getAllTractorsSummary() {
-        return tractorRepository
-                .findAll()
-                .stream()
-                .map(TractorServiceImpl::toTractorSummary)
-                .toList();
+        return inventoryRestClient
+                .get()
+                .uri("http://localhost:8081/tractors/all")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .body(new ParameterizedTypeReference<>() {
+                });
     }
 
     @Override
     public TractorDetailsDTO findById(Long id) {
-        Tractor tractor = tractorRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid tractor Id:" + id));
-        return mapToTractorDetailsDTO(tractor);
-
-    }
-
-    //MAPPING
-    private static TractorSummaryDTO toTractorSummary(Tractor tractor) {
-        return new TractorSummaryDTO(tractor.getId(),
-                tractor.getManufacturer(),
-                tractor.getModel(),
-                tractor.getYear(),
-                tractor.getDescription(),
-                tractor.getWorkHours(),
-                tractor.getImageUrl(),
-                tractor.getEngine(),
-                tractor.getTransmission());
-    }
-
-    private static TractorDetailsDTO toTractorDetails(Tractor tractor) {
-        return new TractorDetailsDTO(tractor.getId(),
-                tractor.getManufacturer(),
-                tractor.getModel(),
-                tractor.getYear(),
-                tractor.getDescription(),
-                tractor.getWorkHours(),
-                tractor.getImageUrl(),
-                tractor.getEngine(),
-                tractor.getTransmission());
-    }
-
-    private TractorDetailsDTO mapToTractorDetailsDTO(Tractor tractor) {
-        return new TractorDetailsDTO(
-                tractor.getId(),
-                tractor.getManufacturer(),
-                tractor.getModel(),
-                tractor.getYear(),
-                tractor.getDescription(),
-                tractor.getWorkHours(),
-                tractor.getImageUrl(),
-                tractor.getEngine(),
-                tractor.getTransmission());
-    }
-
-    private static Tractor map(AddTractorDTO addTractorDTO) {
-        return new Tractor()
-                .setManufacturer(addTractorDTO.manufacturer())
-                .setModel(addTractorDTO.model())
-                .setYear(addTractorDTO.year())
-                .setDescription(addTractorDTO.description())
-                .setWorkHours(addTractorDTO.workHours())
-                .setImageUrl(addTractorDTO.imageUrl())
-                .setEngine(addTractorDTO.engineType())
-                .setTransmission(addTractorDTO.transmissionType());
+        return getTractorDetails(id);
     }
 }
