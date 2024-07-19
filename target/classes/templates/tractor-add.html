@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="add-tractor">
 
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="add-tractor">
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'add-tractor'})}"></div>
 
-<div class="container">
+<div class="container add-tractor-container">
 
     <div th:if="${successMessage}" class="alert alert-success" role="alert">
         <span th:text="${successMessage}"></span>
         <span th:if="${newTractorId}">
         If you want to check the newly created tractor, please click
-        <a th:href="@{/tractors/{id}(id=${newTractorId})}">here</a>.
+        <a th:href="@{/tractors/details/{id}(id=${newTractorId})}">here</a>.
     </span>
     </div>
 
@@ -51,18 +51,6 @@
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('model')}"
                    th:errors="*{model}">Tractor model is required.</p>
             </div>
-            <!--            <div class="form-group col-md-6 mb-3">-->
-            <!--                <label th:for="price" class="text-white font-weight-bold">Price (BGN)</label>-->
-            <!--                <input-->
-            <!--                        th:field="*{price}"-->
-            <!--                        type="number"-->
-            <!--                        th:errorclass="is-invalid"-->
-            <!--                        class="form-control"-->
-            <!--                        placeholder="Price in BGN"/>-->
-            <!--                <p class="invalid-feedback errors alert alert-danger">-->
-            <!--                    Valid mileage in kilometers is required.-->
-            <!--                </p>-->
-            <!--            </div>-->
             <div class="form-group col-md-6 mb-3">
                 <label th:for="year" class="text-white font-weight-bold">Year</label>
                 <input
@@ -106,16 +94,16 @@
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" th:for="transmission">Transmission</label>
                 <select
-                    th:field="*{transmissionType}"
-                    th:errorclass="is-invalid"
-                    class="form-control">
-                <option value="">- Select transmission type -</option>
-                <option th:each="type: ${allTransmissionTypes}"
-                        th:value="${type}"
-                        th:text="${type}">
-                    SOME OTHER TRANSMISSION
-                </option>
-            </select>
+                        th:field="*{transmissionType}"
+                        th:errorclass="is-invalid"
+                        class="form-control">
+                    <option value="">- Select transmission type -</option>
+                    <option th:each="type: ${allTransmissionTypes}"
+                            th:value="${type}"
+                            th:text="${type}">
+                        SOME OTHER TRANSMISSION
+                    </option>
+                </select>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('transmissionType')}"
                    th:errors="*{transmissionType}">Transmission type is required.</p>
             </div>
@@ -133,13 +121,6 @@
                    th:errors="*{description}">
                     Description is required and should be at least 5 symbols.
                 </p>
-
-                <!--            <small th:each="err : ${#fields.errors('description')}" th:text="${err}" class="text-danger"></small>-->
-
-                <!--            Alternative error display-->
-                <!--            <small th:errors="*{description}" class="text-danger">Description error-->
-                <!--            </small>-->
-
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label class="text-white font-weight-bold" th:for="imageUrl">Image URL</label>
@@ -147,7 +128,7 @@
                         th:field="*{imageUrl}"
                         th:errorclass="is-invalid"
                         id="imageUrl" type="url" class="form-control"
-                       placeholder="Put tractor image URL here">
+                        placeholder="Put tractor image URL here">
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('imageUrl')}"
                    th:errors="*{imageUrl}">Tractor image URL is required.</p>
             </div>

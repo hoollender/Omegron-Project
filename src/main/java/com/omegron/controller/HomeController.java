@@ -1,28 +1,34 @@
 package com.omegron.controller;
 
-import com.omegron.model.dto.WeatherResponseDTO;
-import com.omegron.service.WeatherClientService;
-import com.omegron.util.DateUtil;
+
+import com.omegron.model.user.OmegronUserDetails;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class HomeController {
-    private final WeatherClientService weatherClientService;
 
-    public HomeController(WeatherClientService weatherClientService) {
-
-        this.weatherClientService = weatherClientService;
+    @ModelAttribute("welcome_user")
+    public String addWelcomeUserAttribute(@AuthenticationPrincipal UserDetails userDetails) {
+        if (userDetails instanceof OmegronUserDetails omegronUserDetails) {
+            return omegronUserDetails.getFirstName() + " " + omegronUserDetails.getLastName();
+        }
+        return "User";
     }
 
-    @GetMapping("/weather")
-    public String weather(Model model) {
+    @GetMapping("/")
+    public String index(@AuthenticationPrincipal UserDetails userDetails) {
+        if (userDetails instanceof OmegronUserDetails) {
+            return "redirect:/home";
+        }
+        return "index";
+    }
 
-        WeatherResponseDTO weatherResponseDTO = weatherClientService.fetchWeatherData();
-        model.addAttribute("weather", weatherResponseDTO);
-        model.addAttribute("currentDate", DateUtil.getCurrentDate()); // Add today's date to the model
-        
-        return "weather";
+    @GetMapping("/home")
+    public String home() {
+        return "home";
     }
 }

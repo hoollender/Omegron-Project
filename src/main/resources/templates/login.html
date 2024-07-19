@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="login">
 <head th:replace="~{fragments/commons::head}"></head>
 
-<body>
+<body class="login">
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'login'})}"></div>
 
-<div class="container">
+<div class="container login-container">
     <h2 class="text-center text-white" th:text="#{login_text}">Login</h2>
     <form th:method="POST"
           th:action="@{/users/login}"

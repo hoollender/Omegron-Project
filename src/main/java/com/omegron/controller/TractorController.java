@@ -7,6 +7,7 @@ import com.omegron.model.enums.ManufacturersEnum;
 import com.omegron.model.enums.TransmissionTypeEnum;
 import com.omegron.service.TractorService;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/tractors")
-public class TractorController extends BaseController {
+public class TractorController {
 
     private final TractorService tractorService;
 
@@ -26,6 +27,7 @@ public class TractorController extends BaseController {
 //ADDING A TRACTOR
 
     @GetMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public String addTractor(Model model) {
         if (!model.containsAttribute("addTractorDTO")) {
             model.addAttribute("addTractorDTO", AddTractorDTO.empty());
@@ -38,6 +40,7 @@ public class TractorController extends BaseController {
     }
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public String doAddTractor(@Valid AddTractorDTO addTractorDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
@@ -55,7 +58,9 @@ public class TractorController extends BaseController {
 // UPDATING A TRACTOR
 
     @GetMapping("/update/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String showUpdateForm(@PathVariable Long id, Model model) {
+
         TractorDetailsDTO tractorDetails = tractorService.findById(id);
         model.addAttribute("tractorDetails", tractorDetails);
         model.addAttribute("allEngineTypes", EngineTypeEnum.values());
@@ -65,15 +70,17 @@ public class TractorController extends BaseController {
     }
 
     @PostMapping("/update/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String updateTractor(@PathVariable Long id, @ModelAttribute("tractorDetails") TractorDetailsDTO tractorDetailsDTO) {
         tractorService.updateTractor(id, tractorDetailsDTO);
-        return "redirect:/tractors/details/" + id; // Redirect to the details page or any other appropriate page
+        return "redirect:/tractors/details/" + id; // Redirect to the details page and shows the same tractor again with updated stats.
     }
 
 
 //DELETING A TRACTOR
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public String deleteTractor(@PathVariable("id") Long id) {
 
         tractorService.deleteTractor(id);

@@ -5,12 +5,15 @@ import com.omegron.service.impl.OmegronUserDetailsService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true) // Enable method-level security
+
 public class SecurityConfig {
 
     @Bean
@@ -37,7 +40,7 @@ public class SecurityConfig {
                                 // what is the name of the password parameter in the Login POST request?
                                 .passwordParameter("password")
                                 // What will happen if the login is successful
-                                .defaultSuccessUrl("/", true)
+                                .defaultSuccessUrl("/home", true)
                                 // What will happen if the login fails
                                 .failureUrl("/users/login-error")
                 )

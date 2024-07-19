@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="all-tractors">
 
 <head th:replace="~{fragments/commons::head}"></head>
-<body>
+<body class="all-tractors">
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'all-tractors'})}"></div>
 
-<div class="container">
-    <h2 class="text-center text-light mt-5">All Tractors</h2>
+<div class="container all-tractors-container">
+    <h2 class="text-center text-light mt-5">There's a list with all your machines:</h2>
     <div class="row mx-auto d-flex flex-wrap justify-content-center">
+        <div th:if="${#lists.isEmpty(allTractors)}" class="col-6 alert alert-danger" role="alert">
+            <p class="text-center text-danger">Currently you have no added machines! Please ask an administrator for further assistance.</p>
+        </div>
         <div th:each="tractor : ${allTractors}" th:object="${tractor}" class="card col-sm-6 col-md-4 col-lg-3 m-3 p-0">
             <img class="card-img-top" th:src="@{${tractor.imageUrl}}" alt="Tractor image">
             <div class="card-body">
@@ -23,7 +26,7 @@
                 </li>
             </ul>
             <div class="card-body">
-                <a class="card-link" th:href="@{/tractors/{id}(id=*{id})}">More details</a>
+                <a class="card-link" th:href="@{/tractors/details/{id}(id=*{id})}">More details</a>
             </div>
         </div>
     </div>

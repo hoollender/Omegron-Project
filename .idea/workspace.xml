@@ -4,21 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-update.html" afterDir="false" />
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Fixed functionality of &quot;update&quot; button in tractor details page. New update page added, where some characteristics can be changed and updated in DB. &#10;Fixed some of the URL paths.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/WeatherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BaseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/repository/TractorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/TractorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/TractorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/TractorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorsAllController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/user/OmegronUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/user/OmegronUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/all-tractors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/all-tractors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tractor-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/repository/TractorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/repository/TractorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorDetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/all-tractors.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/all-tractors.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/tractor-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +56,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,44 +75,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JsonDeserializationTest.executor&quot;: &quot;Debug&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.OmegronApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PaintingsCollectorsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ResellerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kivan/Desktop/Exam/Popravka/PaintingsCollectors-App&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JsonDeserializationTest.executor": "Debug",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.OmegronApplication.executor": "Run",
+    "Spring Boot.PaintingsCollectorsApplication.executor": "Run",
+    "Spring Boot.ResellerApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kivan/Desktop/Exam/Popravka/PaintingsCollectors-App",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PLAIN_TEXT&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.omegron.repository" />
@@ -197,7 +222,7 @@
       <workItem from="1721037414990" duration="13085000" />
       <workItem from="1721054407244" duration="7870000" />
       <workItem from="1721134831076" duration="299000" />
-      <workItem from="1721208581154" duration="4259000" />
+      <workItem from="1721208581154" duration="32631000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -375,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721062880533</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed functionality of &quot;update&quot; button in tractor details page. New update page added, where some characteristics can be changed and updated in DB. &#10;Fixed some of the URL paths.">
+      <option name="closed" value="true" />
+      <created>1721212999285</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1721212999285</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +445,8 @@
     <MESSAGE value="Included logic in a separate service with a Rest Controller, consumed by another service via a Rest Client and used Thymeleaf, consuming REST services from a Web API." />
     <MESSAGE value="Added DateUtil. Purpose is to check the current day and to highlight it in the weather forecast." />
     <MESSAGE value="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the i18n. Index, login and register are translated to 4 languages - english, german, french, bulgarian.&#10;Fixed the login (redirects now to login-error) and doesn't use param anymore." />
+    <MESSAGE value="Fixed functionality of &quot;update&quot; button in tractor details page. New update page added, where some characteristics can be changed and updated in DB. &#10;Fixed some of the URL paths." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed functionality of &quot;update&quot; button in tractor details page. New update page added, where some characteristics can be changed and updated in DB. &#10;Fixed some of the URL paths." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

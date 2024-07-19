@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="profile">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="profile">
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'profile'})}"></div>
+
+<div class="profile-container">
+    <h2 class="text-center text-white mt-5">Profile</h2>
+    <div class="card-body">
+        <img src="/images/user-profile.png" alt="User Profile" class="img-fluid rounded-circle mb-3"
+             style="width: 150px; height: 150px;">
+            <div class="profile-card text-white mb-3">
+            <h5 class="card-title text-white">User Profile</h5>
+            <p class="card-text text-white"><strong>You're currently logged in as:</strong> <span
+                    th:text="${user.username}">E-Mail</span></p>
+            <p class="card-text text-white"><strong>Full Name:</strong> <span
+                    th:text="${user.fullName}">Full Name</span></p>
+            <p class="card-text text-white"><strong>First Name:</strong> <span
+                    th:text="${user.firstName}">First Name</span></p>
+            <p class="card-text text-white"><strong>Last Name:</strong> <span
+                    th:text="${user.lastName}">Last Name</span></p>
+            <p class="card-text text-white"><strong>Email:</strong> <span th:text="${user.username}">E-Mail</span></p>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{fragments/commons::footer}"></footer>
+
+</body>
+</html>
