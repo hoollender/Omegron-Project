@@ -39,4 +39,7 @@ weather:
     url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/2024-07-08/2024-07-22?unitGroup=metric&elements=datetime,name,address,latitude,longitude,tempmax,tempmin,temp,sunrise,sunset,conditions,description,icon,source&include=fcst,obs,remote,days&key={key_id}&contentType=json"
     address: "Drenov"
 
+inventory:
+  api:
+    baseUrl: "http://localhost:8081"
 #%2C encoded is "," !!!

@@ -18,7 +18,8 @@ public record AddTractorDTO(
         @Min(value = 1900, message = "Year must be after 1900")
         Integer year,
         @NotBlank(message = "Description is required.")
-        @Size(min = 5, max = 255, message = "Description should be at least 5 characters long.")        String description,
+        @Size(min = 5, max = 255, message = "Description should be between 5 and 255 characters.")
+        String description,
         @NotNull(message = "Work hours are required.")
         Integer workHours,
         @NotBlank(message = "Image URL is required.")
