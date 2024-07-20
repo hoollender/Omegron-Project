@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="all-landlords">
+
+<head th:replace="~{fragments/commons::head}"></head>
+<body class="all-landlords">
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'all-landlords'})}"></div>
+
+<div class="container-fluid all-landlords-container">
+    <h2 class=" text-center text-light mt-5">List of All Landlords</h2>
+    <div class="row mx-auto d-flex flex-wrap justify-content-center">
+        <div th:each="landLord : ${allLandLords}" th:object="${landLord}" class="card col-sm-6 col-md-4 col-lg-3 m-3 p-0">
+            <div class="card-body">
+                <h5 class="card-title text-dark" th:text="*{firstName}">First Name</h5>
+                <h6 class="card-subtitle mb-2 text-dark" th:text="*{lastName}">Last Name</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item-dark text-white">
+                    <div class="card-text">• Date of Birth: <span th:text="*{dateOfBirth}">Date of Birth</span></div>
+                    <div class="card-text">• Address: <span th:text="*{address}">Address</span></div>
+                    <div class="card-text">• Personal Number: <span th:text="*{personalNumber}">Personal Number</span></div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <a class="card-link" th:href="@{/landlords/details/{id}(id=*{id})}">More details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>

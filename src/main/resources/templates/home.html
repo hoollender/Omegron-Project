@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" class="home">
 
-<head th:replace="~{fragments/commons::head}">
-    <link rel="stylesheet" th:href="@{/css/main.css}">
-</head>
+<head th:replace="~{fragments/commons::head}"></head>
 <body class="home">
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'home'})}"></div>
@@ -13,7 +11,7 @@
     <p th:text="#{welcome_back_text}">We're glad to have you back. Here's a quick overview of your account and activities.</p>
 
     <div class="quick-links">
-        <a href="/brands/all" class="quick-link" th:text="#{view_all_brands}">View All Brands</a>
+        <a href="/landlords/all" class="quick-link" th:text="#{view_all_landlords}">View All Landlords</a>
         <a href="/tractors/all" class="quick-link" th:text="#{view_all_tractors}">View All Tractors</a>
         <a href="/weather" class="quick-link" th:text="#{check_weather}">Check Weather</a>
     </div>

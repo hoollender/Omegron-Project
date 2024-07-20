@@ -23,9 +23,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" href="/brands/all"
-                       th:classappend="${activeLink == 'brands'}? 'active'"
-                       th:text="#{nav_bar_all_brands}">All Brands</a>
+                    <a class="nav-link" href="/landlords/all"
+                       th:classappend="${activeLink == 'all-landlords'}? 'active'"
+                       th:text="#{nav_bar_all_landlords}">All LandLords</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <a class="nav-link" href="/tractors/all"
@@ -53,6 +53,9 @@
                         <a class="dropdown-item" href="/tractors/add"
                            th:classappend="${activeLink == 'add-tractor'}? 'active'"
                            th:text="#{nav_bar_add_tractor}">Add Tractor</a>
+                        <a class="dropdown-item" href="/landlords/add"
+                           th:classappend="${activeLink == 'add-landlord'}? 'active'"
+                           th:text="#{nav_bar_add_landlord}">Add Landlord</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>

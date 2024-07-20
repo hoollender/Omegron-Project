@@ -32,6 +32,9 @@ logging:
     blog: WARN
 server:
   port: 8080
+  error:
+    whitelabel:
+      enabled: false
 
 weather:
   api:

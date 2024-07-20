@@ -4,22 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Successfully migrated to external Rest Service.">
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Refactored some of the code and deleted the unnecessary.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/CustomErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/AddLandLordDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/LandLordDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/LandLordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/LandLordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/403.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/all-landlords.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/landlord-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/landlord-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/landlord-update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/AddTractorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/AddTractorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/dto/UserLoginDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/model/entity/Tractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/repository/TractorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/LandLordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background-details.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/background-tractor-details.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tractor-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/UserLoginDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/entity/Tractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/repository/TractorRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/TractorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/TractorServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/WeatherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/WeatherServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/BrandController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorDetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/controller/TractorDetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/AddTractorDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/model/dto/AddTractorDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_bg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/messages_fr.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/background-details.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +96,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.OmegronApplication.executor": "Debug",
+    "Spring Boot.OmegronApplication.executor": "Run",
     "Spring Boot.PaintingsCollectorsApplication.executor": "Run",
     "Spring Boot.ResellerApplication.executor": "Run",
     "git-widget-placeholder": "master",
@@ -212,7 +235,7 @@
       <workItem from="1721134831076" duration="299000" />
       <workItem from="1721208581154" duration="34305000" />
       <workItem from="1721382322852" duration="1426000" />
-      <workItem from="1721387248903" duration="18442000" />
+      <workItem from="1721387248903" duration="33061000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -414,7 +437,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721406803509</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Refactored some of the code and deleted the unnecessary.">
+      <option name="closed" value="true" />
+      <created>1721467651841</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1721467651841</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +485,8 @@
     <MESSAGE value="Fixed functionality of &quot;update&quot; button in tractor details page. New update page added, where some characteristics can be changed and updated in DB. &#10;Fixed some of the URL paths." />
     <MESSAGE value="Added new pages.&#10;Tried to do better the styles of all pages + navbar. Added more i18n to the newest pages. &#10;Fixed the paths in controllers and added restrictions regarding the role the user has." />
     <MESSAGE value="Successfully migrated to external Rest Service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Successfully migrated to external Rest Service." />
+    <MESSAGE value="Refactored some of the code and deleted the unnecessary." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored some of the code and deleted the unnecessary." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -486,11 +518,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java</url>
           <line>87</line>
           <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/controller/TractorController.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

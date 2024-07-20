@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org" class="landlord-details">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="landlord-details">
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'details'})}"></div>
+
+<div class="container-fluid landlord-details-container">
+    <h2 class="text-center text-white mt-5">Details</h2>
+    <div th:object="${landLordDetails}" class="row mx-auto d-flex flex-row justify-content-center">
+        <div class="card col-sm-6 col-md-5 col-lg-4 m-3 p-0 bg-secondary text-light">
+            <div class="card-body">
+                <h5 class="card-title">Details of the LandLord:</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-info text-light">
+                        <div class="card-text text-left">• First Name: <span th:text="*{firstName}">First Name</span></div>
+                        <div class="card-text text-left">• Middle Name: <span th:text="*{middleName}">Middle Name</span></div>
+                        <div class="card-text text-left">• Last Name: <span th:text="*{lastName}">Last Name</span></div>
+                        <div class="card-text text-left">• Date of Birth: <span th:text="*{dateOfBirth}">Date of Birth</span></div>
+                        <div class="card-text text-left">• Address: <span th:text="*{address}">Address</span></div>
+                        <div class="card-text text-left">• Personal Number: <span th:text="*{personalNumber}">Personal Number</span></div>
+                        <div class="card-text text-left">• Personal ID: <span th:text="*{personalID}">Personal ID</span></div>
+                        <div class="card-text text-left">• Validity of ID: <span th:text="*{validityID}">Validity of ID</span></div>
+                        <div class="card-text text-left">• Date of Issue: <span th:text="*{dateOfIssue}">Date of Issue</span></div>
+                    </li>
+                </ul>
+                <div class="card-body" sec:authorize="hasRole('ADMIN')">
+                    <a class="btn btn-success" th:href="@{/landlords/update/{id}(id=*{id})}">Update</a>
+                    <form th:method="delete" th:action="@{/landlords/{id}(id=*{id})}" class="d-inline">
+                        <input class="btn btn-danger" type="submit" value="Delete"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <footer th:replace="~{fragments/commons::footer}"></footer>
+    </div>
+</div>
+
+</body>
+</html>

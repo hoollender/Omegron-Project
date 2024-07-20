@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="add-landlord">
+
+<head th:replace="~{fragments/commons::head}"></head>
+
+<body class="add-landlord">
+
+<div th:replace="~{fragments/navbar::navbar(activeLink=${'add-landlord'})}"></div>
+
+<div class="container add-landlord-container">
+
+    <div th:if="${successMessage}" class="alert alert-success" role="alert">
+        <span th:text="${successMessage}"></span>
+        <span th:if="${newLandLordId}">
+            If you want to check the newly created landlord, please click
+            <a th:href="@{/landlords/details/{id}(id=${newLandLordId})}">here</a>.
+        </span>
+    </div>
+
+    <h2 class="text-center text-white">Add LandLord</h2>
+    <form
+            th:action="@{/landlords/add}"
+            th:method="POST"
+            th:object="${addLandLordDTO}"
+            class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="firstName" class="text-center text-white font-weight-bold">First Name</label>
+                <input
+                        th:field="*{firstName}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="First Name"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
+                   th:errors="*{firstName}">First name is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="middleName" class="text-center text-white font-weight-bold">Middle Name</label>
+                <input
+                        th:field="*{middleName}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Middle Name"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('middleName')}"
+                   th:errors="*{middleName}">Middle name is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="lastName" class="text-center text-white font-weight-bold">Last Name</label>
+                <input
+                        th:field="*{lastName}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Last Name"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('lastName')}"
+                   th:errors="*{lastName}">Last name is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="dateOfBirth" class="text-white font-weight-bold">Date of Birth</label>
+                <input
+                        th:field="*{dateOfBirth}"
+                        type="date"
+                        th:errorclass="is-invalid"
+                        class="form-control"
+                        placeholder="Date of Birth"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('dateOfBirth')}"
+                   th:errors="*{dateOfBirth}">Date of birth is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="address" class="text-white font-weight-bold">Address</label>
+                <input
+                        th:field="*{address}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Address"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('address')}"
+                   th:errors="*{address}">Address is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="personalNumber" class="text-white font-weight-bold">Personal Number</label>
+                <input
+                        th:field="*{personalNumber}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Personal Number"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('personalNumber')}"
+                   th:errors="*{personalNumber}">Personal number is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="personalID" class="text-white font-weight-bold">Personal ID</label>
+                <input
+                        th:field="*{personalID}"
+                        th:errorclass="is-invalid"
+                        type="text"
+                        class="form-control"
+                        placeholder="Personal ID"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('personalID')}"
+                   th:errors="*{personalID}">Personal ID is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="validityID" class="text-white font-weight-bold">Validity ID</label>
+                <input
+                        th:field="*{validityID}"
+                        th:errorclass="is-invalid"
+                        type="date"
+                        class="form-control"
+                        placeholder="Validity ID"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('validityID')}"
+                   th:errors="*{validityID}">Validity ID is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label th:for="dateOfIssue" class="text-white font-weight-bold">Date of Issue</label>
+                <input
+                        th:field="*{dateOfIssue}"
+                        th:errorclass="is-invalid"
+                        type="date"
+                        class="form-control"
+                        placeholder="Date of Issue"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('dateOfIssue')}"
+                   th:errors="*{dateOfIssue}">Date of issue is required.</p>
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <div class="col col-md-6">
+                    <div class="button-holder d-flex">
+                        <input type="submit" class="btn btn-success btn-lg" value="Add LandLord"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    <footer th:replace="~{fragments/commons::footer}"></footer>
+</div>
+
+</body>
+</html>

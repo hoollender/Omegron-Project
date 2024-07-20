@@ -20,6 +20,6 @@ public class TractorDetailController {
     @GetMapping("/{id}")
     public String tractorDetails(@PathVariable("id") Long id, Model model) {
         model.addAttribute("tractorDetails", tractorService.getTractorDetails(id));
-        return "details";
+        return "tractor-details";
     }
 }
