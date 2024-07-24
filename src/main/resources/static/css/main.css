@@ -228,6 +228,95 @@ body.tractor-details {
      /*background-color: rgb(84 91 98 / 60%);*/
 }
 
+
+/* ALL LANDLORDS STYLES */
+/* Background style for all landlords page */
+body.all-landlords {
+     background-image: url('/images/background-all-landlords.png');
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     background-color: #343a40;
+}
+.all-landlords-container {
+     position: relative;
+     margin-top: 8em;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 12px;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     max-width: 1000px;
+     /*background-color: rgb(84 91 98 / 40%);*/
+}
+
+/* ADD LANDLORD STYLES */
+/* Background style for add landlord page */
+body.add-landlord {
+     background-image: url('/images/background-add-landlord.png');
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     /*background-color: #343a40;*/
+}
+.add-landlord-container {
+     position: relative;
+     margin-top: 10em;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 12px;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     max-width: 1000px;
+     /*background-color: rgb(84 91 98 / 60%);*/
+}
+
+/* UPDATE LANDLORD STYLES */
+/* Background style for update landlord page */
+body.update-landlord {
+     background-image: url('/images/background-update-landlord.png');
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     /*background-color: #343a40;*/
+}
+.update-landlord-container {
+     position: relative;
+     margin-top: 10em;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 12px;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     max-width: 1000px;
+     /*background-color: rgb(84 91 98 / 60%);*/
+}
+
+/*LANDLORD DETAILS STYLES */
+/* Background style for details page */
+body.landlord-details {
+     background-image: url('/images/background-landlord-details.png');
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     /*background-color: #343a40;*/
+}
+.landlord-details-container {
+     position: relative;
+     margin-top: 10em;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 12px;
+     text-align: center;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     max-width: 1000px;
+     /*background-color: rgb(84 91 98 / 60%);*/
+}
+
 /* WEATHER STYLES */
 /* Background style for weather page */
 body.weather {
@@ -317,15 +406,14 @@ body.profile {
      max-width: 600px;
 }
 
-
 /* FOOTER STYLES*/
 footer {
-     position: static;
+     position: relative;
      bottom: 0;
      width: 100%;
 }
 .footer-text {
-     background-color: rgb(84 91 98 / 50%);
+     background-color: rgb(84 91 98 / 80%);
      color: white;
      font-size: 1.4em;
      font-weight: bold;
@@ -349,34 +437,6 @@ form.main-form {
 
 
 
-/*Page Brands*/
-/*.brand-section {*/
-/*     background-image: linear-gradient(to bottom right, rgba(220, 220, 220, 0.9), rgba(255, 255, 255, 0.9));*/
-/*}*/
-
-
-
-/* Background style for brands page */
-body.brands {
-     background-image: url('/images/background-brands.jpg');
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     background-color: #343a40;
-}
-
-
-/*.separate{*/
-/*     margin-top: 3em;*/
-/*     color: #e62e2e;*/
-/*     background-color: #f6f6f6;*/
-/*     padding-top: 0.5em;*/
-/*     padding-bottom: 0.5em;*/
-/*     border-radius: 12px;*/
-/*     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);*/
-/*     !*The warning section*!*/
-/*}*/
 
 
 
@@ -385,95 +445,4 @@ body.brands {
 
 
 
-
-
-
-
-/* ALL LANDLORDS STYLES */
-/* Background style for all landlords page */
-body.all-landlords {
-     background-image: url('/images/background-all-landlords.png');
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     background-color: #343a40;
-}
-.all-landlords-container {
-     position: relative;
-     margin-top: 8em;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 12px;
-     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-     max-width: 1000px;
-     /*background-color: rgb(84 91 98 / 40%);*/
-}
-
-/* ADD LANDLORD STYLES */
-/* Background style for add landlord page */
-body.add-landlord {
-     background-image: url('/images/background-add-landlord.png');
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     /*background-color: #343a40;*/
-}
-.add-landlord-container {
-     position: relative;
-     margin-top: 10em;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 12px;
-     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-     max-width: 1000px;
-     /*background-color: rgb(84 91 98 / 60%);*/
-}
-
-/* UPDATE LANDLORD STYLES */
-/* Background style for update landlord page */
-body.update-landlord {
-     background-image: url('/images/background-update-landlord.png');
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     /*background-color: #343a40;*/
-}
-.update-landlord-container {
-     position: relative;
-     margin-top: 10em;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 12px;
-     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-     max-width: 1000px;
-     /*background-color: rgb(84 91 98 / 60%);*/
-}
-
-/*LANDLORD DETAILS STYLES */
-/* Background style for details page */
-body.landlord-details {
-     background-image: url('/images/background-landlord-details.png');
-     background-position: center center;
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-     /*background-color: #343a40;*/
-}
-.landlord-details-container {
-     position: relative;
-     margin-top: 10em;
-     margin-left: auto;
-     margin-right: auto;
-     border-radius: 12px;
-     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-     max-width: 1000px;
-     /*background-color: rgb(84 91 98 / 60%);*/
-}
 

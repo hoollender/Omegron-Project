@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -86,6 +87,16 @@ public class WeatherServiceImpl implements WeatherService {
     public WeatherResponseDTO getLatestWeatherData() {
         Weather latestWeather = weatherRepository.findTopByOrderByIdDesc();
         return mapWeatherToDTO(latestWeather);
+    }
+
+    public boolean isLatestDataFromPreviousDay() {
+        Weather latestWeather = weatherRepository.findLatestWeatherByDay();
+        if (latestWeather == null || latestWeather.getDays().isEmpty()) {
+            return true; // No data present or no days in the latest weather data
+        }
+        LocalDate latestDate = LocalDate.parse(latestWeather.getDays().get(0).getDatetime());
+        LocalDate today = LocalDate.now();
+        return latestDate.isBefore(today);
     }
 
 

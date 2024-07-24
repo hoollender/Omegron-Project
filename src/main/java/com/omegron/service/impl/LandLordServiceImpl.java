@@ -2,7 +2,6 @@ package com.omegron.service.impl;
 
 import com.omegron.model.dto.AddLandLordDTO;
 import com.omegron.model.dto.LandLordDTO;
-import com.omegron.model.dto.TractorDetailsDTO;
 import com.omegron.service.LandLordService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;

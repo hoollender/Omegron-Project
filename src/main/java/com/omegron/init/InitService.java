@@ -32,7 +32,7 @@ public class InitService implements CommandLineRunner {
             roleRepository.save(adminRole);
         }
 
-        if (!weatherService.hasInitializedWeatherData()) { //Checks if there's weather data in DB
+        if (!weatherService.hasInitializedWeatherData() || weatherService.isLatestDataFromPreviousDay()) { //Checks if there's weather data in DB or if it's from previous day.
             weatherService.updateWeatherData(
                     weatherService.fetchWeatherData()
             );

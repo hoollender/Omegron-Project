@@ -1,26 +1,31 @@
 spring:
   application:
     name: Omegron
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/omegron_application?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:1234}
+
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
-        format_sql: 'TRUE'
+        format_sql: true
     hibernate:
       ddl-auto: update
-    open-in-view: 'false'
+    open-in-view: false
+
   sql:
     init:
       mode: never
+
   mvc:
     hiddenmethod:
       filter:
         enabled: true
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 1234
-    url: jdbc:mysql://localhost:3306/omegron_application?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+
 logging:
   level:
     org:
@@ -30,6 +35,7 @@ logging:
         SQL: DEBUG
       nodeValue: WARN
     blog: WARN
+
 server:
   port: 8080
   error:
@@ -38,8 +44,8 @@ server:
 
 weather:
   api:
-    key: ${WEATHER_API_KEY:}
-    url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/2024-07-08/2024-07-22?unitGroup=metric&elements=datetime,name,address,latitude,longitude,tempmax,tempmin,temp,sunrise,sunset,conditions,description,icon,source&include=fcst,obs,remote,days&key={key_id}&contentType=json"
+    key: ${WEATHER_API_KEY:NGSRXC2QYU6X2Q6BJ7R2WBMA8}
+    url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/{start_date}/{end_date}?unitGroup=metric&elements=datetime,name,address,latitude,longitude,tempmax,tempmin,temp,sunrise,sunset,conditions,description,icon,source&include=fcst,obs,remote,days&key={key_id}&contentType=json"
     address: "Drenov"
 
 inventory:

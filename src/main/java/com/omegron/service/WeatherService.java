@@ -19,4 +19,6 @@ public interface WeatherService {
 
     WeatherResponseDTO getLatestWeatherData();
 
+    boolean isLatestDataFromPreviousDay();
+
 }

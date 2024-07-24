@@ -10,33 +10,33 @@
 
 <div th:replace="~{fragments/navbar::navbar(activeLink=${'weather'})}"></div>
 
-    <div class="weather-container">
-        <div class="weather-header">
-            <h2 class="text-light">Weather Forecast</h2>
-            <h5 class="text-light" th:text="${weather.resolvedAddress}">Resolved Address</h5>
-            <p class="text-light" th:text="${weather.timezone}">Timezone</p>
-            <p th:text="${weather.description}">Weather description</p>
-        </div>
-        <div class="weather-details">
-            <div class="weather-item">
-                <h6>General Information</h6>
-                <p>Latitude: <span th:text="${weather.latitude}"></span></p>
-                <p>Longitude: <span th:text="${weather.longitude}"></span></p>
-                <p>Timezone Offset: <span th:text="${weather.tzoffset}"></span></p>
-            </div>
-        </div>
-        <div class="weather-days">
-            <div th:each="day : ${weather.days}" class="weather-item"
-                 th:classappend="${day.datetime} == ${currentDate} ? 'current-day'">
-                <h6 th:text="${day.datetime}">Date</h6>
-                <p>Temp Max: <span th:text="${day.tempmax}"></span>°C</p>
-                <p>Current Temp: <span th:text="${day.temp}"></span>°C</p>
-                <p>Temp Min: <span th:text="${day.tempmin}"></span>°C</p>
-                <p>Conditions: <span th:text="${day.conditions}"></span></p>
-                <p>Description: <span th:text="${day.description}"></span></p>
-            </div>
+<div class="weather-container">
+    <div class="weather-header">
+        <h2 class="text-light">Weather Forecast</h2>
+        <h5 class="text-light" th:text="${weather.resolvedAddress}">Resolved Address</h5>
+        <p class="text-light" th:text="${weather.timezone}">Timezone</p>
+        <p th:text="${weather.description}">Weather description</p>
+    </div>
+    <div class="weather-details">
+        <div class="weather-item">
+            <h6>General Information</h6>
+            <p>Latitude: <span th:text="${weather.latitude}"></span></p>
+            <p>Longitude: <span th:text="${weather.longitude}"></span></p>
+            <p>Timezone Offset: <span th:text="${weather.tzoffset}"></span></p>
         </div>
     </div>
+    <div class="weather-days">
+        <div th:each="day : ${weather.days}" class="weather-item"
+             th:classappend="${day.datetime} == ${currentDate} ? 'current-day'">
+            <h6 th:text="${day.datetime}">Date</h6>
+            <p>Temp Max: <span th:text="${day.tempmax}"></span>°C</p>
+            <p>Current Temp: <span th:text="${day.temp}"></span>°C</p>
+            <p>Temp Min: <span th:text="${day.tempmin}"></span>°C</p>
+            <p>Conditions: <span th:text="${day.conditions}"></span></p>
+            <p>Description: <span th:text="${day.description}"></span></p>
+        </div>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -65,6 +65,5 @@
             .catch(error => console.error('Error fetching weather data:', error));
     });
 </script>
-
 </body>
 </html>
