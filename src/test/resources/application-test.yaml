@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:testdb
+    driver-class-name: org.hsqldb.jdbcDriver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.HSQLDialect
+
+
+#spring:
+#  jpa:
+#    defer-datasource-initialization: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    hibernate:
+#      ddl-auto: update
+#  sql:
+#    init:
+#      mode: never
+#  mvc:
+#    hiddenmethod:
+#      filter:
+#        enabled: true
+
+weather:
+  api:
+    key: ${WEATHER_API_KEY:NGSRXC2QYU6X2Q6BJ7R2WBMA8}
+    url: "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Drenov/{start_date}/{end_date}?unitGroup=metric&elements=datetime,name,address,latitude,longitude,tempmax,tempmin,temp,sunrise,sunset,conditions,description,icon,source&include=fcst,obs,remote,days&key={key_id}&contentType=json"
+    address: "Drenov"
+    #%2C encoded is "," !!!
+
+inventory:
+  api:
+    baseUrl: "http://localhost:8081"
+

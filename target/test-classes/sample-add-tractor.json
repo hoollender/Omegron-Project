@@ -1,0 +1,10 @@
+{
+  "manufacturer" : "JohnDeere",
+  "model" : "Golqmo Djoniiii",
+  "year" : "2000",
+  "description" : "some description",
+  "workHours" : "20",
+  "imageUrl" : "https://www.deere.bg/assets/images/region-2/products/tractors/large/6r-large-frame/6250r_r2g001346_large_0207e11cc0fb8a81e9690849eace258e4cd04051.png",
+  "engineType" : "Petrol",
+  "transmissionType" : "DualClutch"
+}

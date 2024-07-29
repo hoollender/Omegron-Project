@@ -4,30 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added more pages - 15 in total now.&#10;Added landlord functionality (again using REST API).&#10;Custom error page 403 added, disabled whitelabel.">
+    <list default="true" id="57fec7ab-543f-4080-bc05-91ba6c102769" name="Changes" comment="Added check to prove in BD, if the latest saved information is from a previous day, so that it fetches the newest forecast at each start of the application.&#10;Refactored some code.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/OmegronApplicationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/HomeControllerIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/LoginControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/RegistrationControllerIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/TractorControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/TractorDetailControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/TractorsAllController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/UserProfileControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/WeatherControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/controller/WeatherRestControllerIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/service/impl/LandLordServiceImplIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com.omegron/service/impl/UserServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/WeatherApiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/init/InitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/repository/WeatherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/WeatherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/config/RestClientConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/LandLordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/LandLordServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/all-landlords.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/all-landlords.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/all-tractors.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/all-tractors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/brands.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/weather.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/omegron/ResellerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/RestClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/RestClientConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/config/WeatherApiConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/config/WeatherApiConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/init/InitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/repository/WeatherRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/repository/WeatherRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/WeatherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/WeatherService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/LandLordServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/LandLordServiceImpl$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/LandLordServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/LandLordServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/WeatherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/omegron/service/impl/WeatherServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/all-landlords.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/all-landlords.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/brands.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/all-tractors.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/all-tractors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/weather.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/weather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/omegron/ResellerApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +80,33 @@
   "keyToString": {
     "Application.JsonDeserializationTest.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.CustomErrorControllerTest.accessDenied_shouldReturn403Page.executor": "Run",
+    "JUnit.CustomErrorControllerTest.executor": "Run",
+    "JUnit.HomeControllerIT.executor": "Coverage",
+    "JUnit.HomeControllerIT.whenUserAuthenticated_thenRedirectToHome.executor": "Run",
+    "JUnit.LandLordServiceImplIT.executor": "Run",
+    "JUnit.LandLordServiceImplIT.testAddLandLord.executor": "Debug",
+    "JUnit.LandLordServiceImplIT.testGetAllLandLordsSummary.executor": "Run",
+    "JUnit.LandLordServiceImplTest.executor": "Run",
+    "JUnit.LoginControllerTest.executor": "Run",
+    "JUnit.OmegronApplicationTest.contextLoads.executor": "Run",
+    "JUnit.OmegronApplicationTest.executor": "Run",
+    "JUnit.OmegronApplicationTests.executor": "Run",
+    "JUnit.RegistrationControllerIT.executor": "Coverage",
+    "JUnit.RegistrationControllerIT.testRegistrationEmailAlreadyTaken.executor": "Coverage",
+    "JUnit.TractorControllerTest.testAddTractorGet.executor": "Run",
+    "JUnit.TractorDetailControllerTest.executor": "Run",
+    "JUnit.TractorServiceImplIntegrationTest.executor": "Coverage",
+    "JUnit.TractorServiceImplIntegrationTest.testAddTractor.executor": "Run",
+    "JUnit.TractorServiceImplIntegrationTest.testUpdateTractor.executor": "Run",
+    "JUnit.TractorsAllControllerTest.executor": "Run",
+    "JUnit.UserProfileControllerTest.executor": "Run",
+    "JUnit.UserServiceImplTest.executor": "Coverage",
+    "JUnit.WeatherClientServiceImplIT.executor": "Run",
+    "JUnit.WeatherControllerTest.executor": "Run",
+    "JUnit.WeatherRestControllerIT.executor": "Run",
+    "JUnit.WeatherRestControllerIT.getWeather_shouldReturnWeatherData.executor": "Run",
+    "JUnit.java in Project-Omegron.executor": "Coverage",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -87,7 +119,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kivan/Desktop/Omegron-Inventory",
+    "last_opened_file_path": "C:/Users/kivan/Desktop/Online Project Defence/Project/src/test/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -117,17 +149,20 @@
       <recent name="com.omegron.model.enums" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\test\java" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\java\com\omegron\controller" />
       <recent name="C:\Users\kivan\Desktop\Exam\Popravka\PaintingsCollectors-App\src\main\resources\templates" />
       <recent name="C:\Users\kivan\Desktop\Exam\Popravka\PaintingsCollectors-App\src\main\java\com\paintingscollectors" />
-      <recent name="C:\Users\User\Videos\PaintingsCollectors-App\src\main\java\com\paintingscollectors\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\templates" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\i18n" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources\static" />
       <recent name="C:\Users\kivan\Desktop\Online Project Defence\Project\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.paintingscollectors.config" />
@@ -144,47 +179,98 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OmegronApplication">
-    <configuration name="JsonDeserializationTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.omegron.util.JsonDeserializationTest" />
+  <component name="RunManager" selected="JUnit.java in Project-Omegron">
+    <configuration name="CustomErrorControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project-Omegron" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.omegron.util.*" />
+          <option name="PATTERN" value="com.omegron.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.omegron.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.omegron.controller.CustomErrorControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OmegronApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="WEATHER_API_KEY" value="NGSRXC2QYU6X2Q6BJ7R2WBMA8" />
-        <env name="DB_USERNAME" value="root" />
-        <env name="DB_PASSWORD" value="1234" />
-      </envs>
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="HomeControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project-Omegron" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.omegron.OmegronApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.omegron.*" />
+          <option name="PATTERN" value="com.omegron.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.omegron.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.omegron.controller.HomeControllerIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandLordServiceImplIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project-Omegron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.omegron.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.omegron.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.omegron.service.impl.LandLordServiceImplIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LandLordServiceImplIT.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project-Omegron" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.omegron.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.omegron.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.omegron.service.impl.LandLordServiceImplIT" />
+      <option name="METHOD_NAME" value="testFindById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Project-Omegron" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Project-Omegron" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OmegronApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Project-Omegron" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.omegron.OmegronApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.JsonDeserializationTest" />
+      <item itemvalue="JUnit.CustomErrorControllerTest" />
+      <item itemvalue="JUnit.HomeControllerIT" />
+      <item itemvalue="JUnit.LandLordServiceImplIT.testFindById" />
+      <item itemvalue="JUnit.LandLordServiceImplIT" />
+      <item itemvalue="JUnit.java in Project-Omegron" />
       <item itemvalue="Spring Boot.OmegronApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.OmegronApplication" />
-        <item itemvalue="Application.JsonDeserializationTest" />
+        <item itemvalue="JUnit.java in Project-Omegron" />
+        <item itemvalue="JUnit.LandLordServiceImplIT.testFindById" />
+        <item itemvalue="JUnit.LandLordServiceImplIT" />
+        <item itemvalue="JUnit.HomeControllerIT" />
+        <item itemvalue="JUnit.CustomErrorControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +308,9 @@
       <workItem from="1721134831076" duration="299000" />
       <workItem from="1721208581154" duration="34305000" />
       <workItem from="1721382322852" duration="1426000" />
-      <workItem from="1721387248903" duration="54757000" />
+      <workItem from="1721387248903" duration="78443000" />
+      <workItem from="1721973562835" duration="23327000" />
+      <workItem from="1722243780230" duration="5359000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -440,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721491307272</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added check to prove in BD, if the latest saved information is from a previous day, so that it fetches the newest forecast at each start of the application.&#10;Refactored some code.">
+      <option name="closed" value="true" />
+      <created>1721835621447</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1721835621447</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +578,8 @@
     <MESSAGE value="Successfully migrated to external Rest Service." />
     <MESSAGE value="Refactored some of the code and deleted the unnecessary." />
     <MESSAGE value="Added more pages - 15 in total now.&#10;Added landlord functionality (again using REST API).&#10;Custom error page 403 added, disabled whitelabel." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more pages - 15 in total now.&#10;Added landlord functionality (again using REST API).&#10;Custom error page 403 added, disabled whitelabel." />
+    <MESSAGE value="Added check to prove in BD, if the latest saved information is from a previous day, so that it fetches the newest forecast at each start of the application.&#10;Refactored some code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added check to prove in BD, if the latest saved information is from a previous day, so that it fetches the newest forecast at each start of the application.&#10;Refactored some code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -515,16 +612,6 @@
           <line>88</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/omegron/service/impl/WeatherServiceImpl.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -537,5 +624,26 @@
         <watch expression="clientResponse" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project_Omegron$UserServiceImplTest.ic" NAME="UserServiceImplTest Coverage Results" MODIFIED="1721905027290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$RegistrationControllerIT.ic" NAME="RegistrationControllerIT Coverage Results" MODIFIED="1721917684216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$LandLordServiceImplTest.ic" NAME="LandLordServiceImplTest Coverage Results" MODIFIED="1721981133543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$RegistrationControllerIT_testRegistrationEmailAlreadyTaken.ic" NAME="RegistrationControllerIT.testRegistrationEmailAlreadyTaken Coverage Results" MODIFIED="1721913747491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$HomeControllerIT.ic" NAME="HomeControllerIT Coverage Results" MODIFIED="1722246688169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$TractorServiceImplIntegrationTest.ic" NAME="TractorServiceImplIntegrationTest Coverage Results" MODIFIED="1721922707559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.omegron.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project_Omegron$java_in_Project_Omegron.ic" NAME="java in Project-Omegron Coverage Results" MODIFIED="1722246729098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

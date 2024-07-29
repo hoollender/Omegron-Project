@@ -1,5 +1,6 @@
 package com.omegron.service.impl;
 
+import com.omegron.config.InventoryApiConfig;
 import com.omegron.model.dto.AddLandLordDTO;
 import com.omegron.model.dto.LandLordDTO;
 import com.omegron.service.LandLordService;
@@ -15,16 +16,18 @@ import java.util.List;
 public class LandLordServiceImpl implements LandLordService {
 
     private final RestClient inventoryRestClient;
+    private final InventoryApiConfig inventoryApiConfig;
 
-    public LandLordServiceImpl(@Qualifier("inventoryRestClient") RestClient inventoryRestClient) {
+    public LandLordServiceImpl(@Qualifier("inventoryRestClient") RestClient inventoryRestClient, InventoryApiConfig inventoryApiConfig) {
         this.inventoryRestClient = inventoryRestClient;
+        this.inventoryApiConfig = inventoryApiConfig;
     }
 
     @Override
     public void addLandLord(AddLandLordDTO addLandLordDTO) {
         inventoryRestClient
                 .post()
-                .uri("http://localhost:8081/landlords/add")
+                .uri(inventoryApiConfig.getBaseUrl() + "/landlords/add")
                 .body(addLandLordDTO)
                 .retrieve();
     }
@@ -33,7 +36,7 @@ public class LandLordServiceImpl implements LandLordService {
     public void updateLandLord(Long id, LandLordDTO landLordDTO) {
         inventoryRestClient
                 .put()
-                .uri("http://localhost:8081/landlords/update/{id}", id)
+                .uri("/landlords/update/{id}", id)
                 .body(landLordDTO)
                 .retrieve()
                 .toBodilessEntity();
@@ -44,7 +47,7 @@ public class LandLordServiceImpl implements LandLordService {
     public void deleteLandLord(long landLordId) {
         inventoryRestClient
                 .delete()
-                .uri("http://localhost:8081/landlords/{id}", landLordId)
+                .uri("/landlords/{id}", landLordId)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .toBodilessEntity();
@@ -54,7 +57,7 @@ public class LandLordServiceImpl implements LandLordService {
     public LandLordDTO getLandLordDetails(Long id) {
         return inventoryRestClient
                 .get()
-                .uri("http://localhost:8081/landlords/details/{id}", id)
+                .uri("/landlords/details/{id}", id)
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .body(LandLordDTO.class);
@@ -64,7 +67,7 @@ public class LandLordServiceImpl implements LandLordService {
     public List<LandLordDTO> getAllLandLordsSummary() {
         return inventoryRestClient
                 .get()
-                .uri("http://localhost:8081/landlords/all")
+                .uri("/landlords/all")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .body(new ParameterizedTypeReference<>() {
